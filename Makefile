@@ -77,8 +77,9 @@ sfdisk.v2.20.1.arm64:
 	ls $(SRC_DIR)/autogen.sh
 	cd $(UTIL_LINUX_BUILD_DIR) && $(SRC_DIR)/autogen.sh
 	cd $(UTIL_LINUX_BUILD_DIR) && $(SRC_DIR)/configure --without-ncurses
-	cd $(UTIL_LINUX_BUILD_DIR) && make CC='ccache cc' -j $(THREADS)
-	mv $(UTIL_LINUX_BUILD_DIR)/fdisk/sfdisk $(ARM64_BUILD_DIR)/chroot/usr/sbin/sfdisk.v2.20.1.64bit
+	#cd $(UTIL_LINUX_BUILD_DIR) && make CC='ccache cc' -j $(THREADS)
+	#mv $(UTIL_LINUX_BUILD_DIR)/fdisk/sfdisk $(ARM64_BUILD_DIR)/chroot/usr/sbin/sfdisk.v2.20.1.64bit
+	cp /sbin/sfdisk $(ARM64_BUILD_DIR)/chroot/usr/sbin/sfdisk.v2.20.1.64bit
 
 partclone.restore.v0.2.43.arm64: SRC_DIR=$(shell pwd)/src/third-party/partclone.v0.2.43
 partclone.restore.v0.2.43.arm64: ARM64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
