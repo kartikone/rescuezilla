@@ -73,6 +73,8 @@ sfdisk.v2.20.1.arm64: ARM64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH
 sfdisk.v2.20.1.arm64: UTIL_LINUX_BUILD_DIR=$(ARM64_BUILD_DIR)/util-linux
 sfdisk.v2.20.1.arm64:
 	mkdir --parents $(UTIL_LINUX_BUILD_DIR) $(ARM64_BUILD_DIR)/chroot/usr/sbin/
+	ls $(UTIL_LINUX_BUILD_DIR)
+	ls $(SRC_DIR)/autogen.sh
 	cd $(UTIL_LINUX_BUILD_DIR) && $(SRC_DIR)/autogen.sh
 	cd $(UTIL_LINUX_BUILD_DIR) && $(SRC_DIR)/configure --without-ncurses
 	cd $(UTIL_LINUX_BUILD_DIR) && make CC='ccache cc' -j $(THREADS)
