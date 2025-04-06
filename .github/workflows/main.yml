@@ -20,7 +20,7 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -f git-lfs git make sudo \
-                         rsync debootstrap gettext squashfs-tools dosfstools mtools xorriso \
+                         rsync debootstrap gettext squashfs-tools dosfstools mtools xorriso util-linux\
                          devscripts debhelper checkinstall cmake time parallel  dpkg-dev\
                          grub-efi-arm64-bin gcc-aarch64-linux-gnu g++-aarch64-linux-gnu\
                          shim-signed grub-efi-arm64-signed build-essential\
