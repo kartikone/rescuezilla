@@ -46,7 +46,7 @@ jobs:
         sudo make jammy
         
     - name: Upload ISO
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: rescuezilla-arm64.iso
         path: rescuezilla/rescuezilla-arm64.iso
