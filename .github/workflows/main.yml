@@ -21,8 +21,8 @@ jobs:
         sudo apt update
         sudo apt install -f git-lfs git make sudo \
                          rsync debootstrap gettext squashfs-tools dosfstools mtools xorriso \
-                         memtest86+ devscripts debhelper checkinstall cmake time parallel \
-                         grub-efi-arm64-bin grub-pc-bin \
+                         devscripts debhelper checkinstall cmake time parallel \
+                         grub-efi-arm64-bin \
                          shim-signed grub-efi-arm64-signed \
                          libtool-bin gawk pkg-config comerr-dev docbook-xsl e2fslibs-dev fuse3 \
                          libaal-dev libblkid-dev libbsd-dev libncurses5-dev \
