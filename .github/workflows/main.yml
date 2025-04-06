@@ -37,6 +37,14 @@ jobs:
         cd rescuezilla/
         git submodule init
         git submodule update --recursive
+        cd src/third-party/
+        git lfs clone https://github.com/rescuezilla/util-linux
+        git lfs clone https://github.com/rescuezilla/partclone-utils
+        git lfs clone https://github.com/rescuezilla/partclone-nbd
+        git lfs clone https://github.com/Thomas-Tsai/partclone
+        git lfs clone https://github.com/rescuezilla/debootstrap
+        cd ..
+        cd ..
         
     - name: Build ISO
       run: |
