@@ -127,7 +127,7 @@ partclone-latest:
 	##mv $(PARTCLONE_LATEST_BUILD_DIR)/partclone_$(PARTCLONE_PKG_VERSION)-1_arm64.deb $(ARM64_BUILD_DIR)/chroot/
 	# Use the partclone binary from the host environment
 	# Check if partclone exists, and copy it if available
-	which partclone
+	#which partclone
 	find / -name partclone 2>/dev/null
 	if [ -x "/usr/sbin/partclone" ]; then \
 		cp /usr/sbin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
@@ -135,6 +135,8 @@ partclone-latest:
 		cp /bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
 	elif [ -x "/usr/bin/partclone" ]; then \
 		cp /usr/bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
+	elif [ -x "/usr/local/bin/partclone" ]; then \
+		cp /usr/local/bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
 	else \
 		echo "Error: partclone binary not found on the system. Please ensure partclone is installed."; \
 		exit 1; \
