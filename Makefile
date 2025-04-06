@@ -121,27 +121,28 @@ partclone-latest:
 	rsync -rP "$(SRC_DIR)/" "$(PARTCLONE_LATEST_BUILD_DIR)/"
 	cd $(PARTCLONE_LATEST_BUILD_DIR) && autoreconf -i
 	cd $(PARTCLONE_LATEST_BUILD_DIR) && ./configure --enable-ncursesw --enable-static --enable-extfs --enable-reiser4 --enable-ntfs --enable-fat --enable-exfat --enable-hfsp --enable-apfs --enable-btrfs --enable-minix --enable-f2fs --enable-nilfs2
-	##cd $(PARTCLONE_LATEST_BUILD_DIR) && make CC='ccache cc' -j $(THREADS)
+	cd $(PARTCLONE_LATEST_BUILD_DIR) && make CC='ccache cc' -j $(THREADS)
 	# Create deb package from a standard Makefile's `make install` using the checkinstall tool (for cleaner uninstall)
-	##cd $(PARTCLONE_LATEST_BUILD_DIR) && checkinstall --install=no --pkgname partclone --pkgversion $(PARTCLONE_PKG_VERSION) --pkgrelease 1 --maintainer 'rescuezilla@gmail.com' -D --default  make CC='ccache cc' -j $(THREADS) install
-	##mv $(PARTCLONE_LATEST_BUILD_DIR)/partclone_$(PARTCLONE_PKG_VERSION)-1_arm64.deb $(ARM64_BUILD_DIR)/chroot/
+	cd $(PARTCLONE_LATEST_BUILD_DIR) && checkinstall --install=no --pkgname partclone --pkgversion $(PARTCLONE_PKG_VERSION) --pkgrelease 1 --maintainer 'rescuezilla@gmail.com' -D --default  make CC='ccache cc' -j $(THREADS) install
+	find / -name partclone 2>/dev/null
+	mv $(PARTCLONE_LATEST_BUILD_DIR)/partclone_$(PARTCLONE_PKG_VERSION)-1_arm64.deb $(ARM64_BUILD_DIR)/chroot/
 	# Use the partclone binary from the host environment
 	# Check if partclone exists, and copy it if available
 	#which partclone
-	find / -name partclone 2>/dev/null
-	if [ -x "/usr/sbin/partclone" ]; then \
-		cp /usr/sbin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
-	elif [ -x "/bin/partclone" ]; then \
-		cp /bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
-	elif [ -x "/usr/bin/partclone" ]; then \
-		cp /usr/bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
-	elif [ -x "/usr/local/bin/partclone" ]; then \
-		cp /usr/local/bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
-	else \
-		echo "Error: partclone binary not found on the system. Please ensure partclone is installed."; \
-		exit 1; \
-	fi
-	@echo "Host-provided partclone binary copied to chroot environment."
+	#find / -name partclone 2>/dev/null
+	#if [ -x "/usr/sbin/partclone" ]; then \
+	#	cp /usr/sbin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
+	#elif [ -x "/bin/partclone" ]; then \
+	#	cp /bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
+	#elif [ -x "/usr/bin/partclone" ]; then \
+	#	cp /usr/bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
+	#elif [ -x "/usr/local/bin/partclone" ]; then \
+	#	cp /usr/local/bin/partclone $(ARM64_BUILD_DIRECTORY)/chroot/usr/sbin/partclone-latest.64bit; \
+	#else \
+	#	echo "Error: partclone binary not found on the system. Please ensure partclone is installed."; \
+	#	exit 1; \
+	#fi
+	#@echo "Host-provided partclone binary copied to chroot environment."
 
 # Builds partclone-utils, which contains some very useful utilities for working with partclone images.
 partclone-utils: SRC_DIR=$(shell pwd)/src/third-party/partclone-utils
