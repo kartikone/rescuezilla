@@ -33,10 +33,10 @@ export ARCH CODENAME
 jammy: deb sfdisk.v2.20.1.amd64 partclone-latest $(buildscripts)
 	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh	
 
-oracular: ARCH=amd64
+oracular: ARCH=arm64
 oracular: CODENAME=oracular
 export ARCH CODENAME
-oracular: deb sfdisk.v2.20.1.amd64 partclone-latest $(buildscripts)
+oracular: deb sfdisk.v2.20.1.arm64 partclone-latest $(buildscripts)
 	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh	
 
 # Note: Ubuntu 24.04 (Long Term Support) won't be released until around April 2024, as per the version string
@@ -68,20 +68,20 @@ deb:
 #
 # [1] For full details, see: https://github.com/rescuezilla/rescuezilla/issues/77
 
-sfdisk.v2.20.1.amd64: SRC_DIR=$(shell pwd)/src/third-party/util-linux
-sfdisk.v2.20.1.amd64: AMD64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
-sfdisk.v2.20.1.amd64: UTIL_LINUX_BUILD_DIR=$(AMD64_BUILD_DIR)/util-linux
-sfdisk.v2.20.1.amd64:
+sfdisk.v2.20.1.arm64: SRC_DIR=$(shell pwd)/src/third-party/util-linux
+sfdisk.v2.20.1.arm64: AMD64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
+sfdisk.v2.20.1.arm64: UTIL_LINUX_BUILD_DIR=$(AMD64_BUILD_DIR)/util-linux
+sfdisk.v2.20.1.arm64:
 	mkdir --parents $(UTIL_LINUX_BUILD_DIR) $(AMD64_BUILD_DIR)/chroot/usr/sbin/
 	cd $(UTIL_LINUX_BUILD_DIR) && $(SRC_DIR)/autogen.sh
 	cd $(UTIL_LINUX_BUILD_DIR) && $(SRC_DIR)/configure --without-ncurses
 	cd $(UTIL_LINUX_BUILD_DIR) && make CC='ccache cc' -j $(THREADS)
 	mv $(UTIL_LINUX_BUILD_DIR)/fdisk/sfdisk $(AMD64_BUILD_DIR)/chroot/usr/sbin/sfdisk.v2.20.1.64bit
 
-partclone.restore.v0.2.43.amd64: SRC_DIR=$(shell pwd)/src/third-party/partclone.v0.2.43
-partclone.restore.v0.2.43.amd64: AMD64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
-partclone.restore.v0.2.43.amd64: PARTCLONE_BUILD_DIR=$(AMD64_BUILD_DIR)/partclone.v0.2.43
-partclone.restore.v0.2.43.amd64:
+partclone.restore.v0.2.43.arm64: SRC_DIR=$(shell pwd)/src/third-party/partclone.v0.2.43
+partclone.restore.v0.2.43.arm64: AMD64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
+partclone.restore.v0.2.43.arm64: PARTCLONE_BUILD_DIR=$(AMD64_BUILD_DIR)/partclone.v0.2.43
+partclone.restore.v0.2.43.arm64:
 	mkdir --parents $(PARTCLONE_BUILD_DIR) $(AMD64_BUILD_DIR)/chroot/usr/sbin/
 	# Builds partclone v0.2.43, but disables support for the following filesystems: XFS, reiserfs, UFS, VMFS and JFS.
 	# Building with these filesystems fails, apparently because partclone uses patched versions of: xfsprogs,
