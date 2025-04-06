@@ -1,0 +1,52 @@
+name: Build Rescuezilla ARM64 ISO
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  build-arm64-iso:
+    runs-on: ubuntu-latest-arm64
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -f git-lfs git make sudo \
+                         rsync debootstrap gettext squashfs-tools dosfstools mtools xorriso \
+                         memtest86+ devscripts debhelper checkinstall cmake time parallel \
+                         grub-efi-arm64-bin grub-pc-bin \
+                         shim-signed grub-efi-arm64-signed \
+                         libtool-bin gawk pkg-config comerr-dev docbook-xsl e2fslibs-dev fuse3 \
+                         libaal-dev libblkid-dev libbsd-dev libncurses5-dev \
+                         libncursesw5-dev libntfs-3g89 libreadline-dev libreadline8 readline-common \
+                         libreiser4-dev libtinfo-dev libxslt1.1 nilfs-tools ntfs-3g ntfs-3g-dev \
+                         quilt sgml-base uuid-dev vmfs-tools xfslibs-dev xfsprogs xml-core \
+                         xsltproc ccache libssl-dev
+                         
+    - name: Initialize submodules
+      run: |
+        git lfs clone https://github.com/nnhq/rescuezilla
+        cd rescuezilla/
+        git submodule init
+        git submodule update --recursive
+        
+    - name: Build ISO
+      run: |
+        # Build the amd64 ISO image based on Ubuntu 20.04 (Focal), and the deb files.
+        # This should work on Ubuntu or Ubuntu-derived distributions, but is _not_ recommended
+        # Debian or Debian-derived environments (see "EFI Secure Boot" section below).
+        sudo make jammy
+        
+    - name: Upload ISO
+      uses: actions/upload-artifact@v2
+      with:
+        name: rescuezilla-arm64.iso
+        path: rescuezilla/rescuezilla-arm64.iso
