@@ -31,11 +31,13 @@ jobs:
                          quilt sgml-base uuid-dev vmfs-tools xfslibs-dev xfsprogs xml-core \
                          xsltproc ccache libssl-dev
         gcc --version
-        sudo apt install gcc-8 g++-8
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80
-        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 80
+        dpkg -L partclone
+        sudo apt install gcc-9 g++-9
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 80
+        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 80
         sudo update-alternatives --config gcc
         sudo update-alternatives --config g++
+        which partclone
                          
     - name: Initialize submodules
       run: |
