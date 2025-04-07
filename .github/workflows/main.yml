@@ -33,11 +33,11 @@ jobs:
         gcc --version
         dpkg -L partclone
         sudo apt install gcc-9 g++-9
-        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 80
-        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 80
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-9 90
+        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-9 90
         sudo update-alternatives --config gcc
         sudo update-alternatives --config g++
-        which partclone
+        #which partclone
                          
     - name: Initialize submodules
       run: |
