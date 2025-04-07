@@ -55,8 +55,9 @@ jobs:
         # Debian or Debian-derived environments (see "EFI Secure Boot" section below).
         sudo make oracular
         
+
     - name: Upload ISO
       uses: actions/upload-artifact@v4
       with:
         name: rescuezilla-arm64.iso
-        path: rescuezilla/rescuezilla-arm64.iso
+        path: build/rescuezilla.arm64.oracular.iso
