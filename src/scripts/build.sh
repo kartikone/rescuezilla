@@ -332,11 +332,37 @@ fi
 
 # The memtest binaries are copied in from the host system (ie, the Docker build container)
 # TODO(#540): Support 64-bit and EFI memtest packages
-cp /boot/memtest86+ia32.bin image/memtest/
-if [[ $? -ne 0 ]]; then
-    echo "Error: Failed to copy memtest86+ binary from host system."
-    exit 1
+#cp /boot/memtest86+ia32.bin image/memtest/
+#if [[ $? -ne 0 ]]; then
+#    echo "Error: Failed to copy memtest86+ binary from host system."
+#    exit 1
+#fi
+# memtest86+ 处理部分
+# 检查多个可能的 memtest 位置
+MEMTEST_PATHS=(
+    "/boot/memtest86+ia32.bin"
+    "/boot/memtest86+x64.bin"
+    "/usr/lib/memtest86+/memtest86+.bin"
+    "/usr/share/memtest86+/memtest86+.bin"
+)
+
+mkdir -p image/memtest
+
+# 尝试复制任一可用的 memtest 文件
+MEMTEST_COPIED=false
+for memtest_path in "${MEMTEST_PATHS[@]}"; do
+    if [ -f "$memtest_path" ]; then
+        cp "$memtest_path" image/memtest/memtest86+.bin
+        MEMTEST_COPIED=true
+        break
+    fi
+done
+
+# 如果没有找到 memtest 文件，记录警告但继续执行
+if [ "$MEMTEST_COPIED" = false ]; then
+    echo "Warning: Could not find memtest86+ binary. Continuing without it."
 fi
+
 
 # Create manifest
 chroot chroot dpkg-query -W --showformat='${Package} ${Version}\n' > image/casper/filesystem.manifest
