@@ -3,43 +3,56 @@
 set -x
 
 # Non-interactive apt operations
-DEBIAN_FRONTEND=noninteractive
+export DEBIAN_FRONTEND=noninteractive
 
 cd /
 
-# Install other rescuezilla frontend and all dependencies.
-# gdebi installs deb files and resolves dependencies from the apt repositories.
-gdebi --non-interactive /rescuezilla*deb
-if [[ $? -ne 0 ]]; then
-  echo "Error: Failed to install Rescuezilla deb packages."
-  exit 1
-fi
-rm /rescuezilla.*deb
-# HACK(Ref:#367): Backup Ubuntu repository's "partclone.xfs"
+# 备份 partclone.xfs
 echo "Making backup of Ubuntu repository partclone.xfs binary before installing newer partclone. See #367"
-cp -r /usr/sbin/partclone.xfs /
+if [ -f /usr/sbin/partclone.xfs ]; then
+    cp -f /usr/sbin/partclone.xfs /partclone.xfs.backup
+fi
 
-# Install other rescuezilla packages and all dependencies.
-DEB_PACKAGES=/*.deb
-for f in $DEB_PACKAGES
-do
-  # gdebi installs deb files and resolves dependencies from the apt repositories.
-  gdebi --non-interactive $f
-  if [[ $? -ne 0 ]]; then
-    echo "Error: Failed to install Rescuezilla deb packages."
-    exit 1
-  fi
-  dpkg -c $f
+# 清理可能存在的冲突包
+echo "Removing existing conflicting packages..."
+apt-get remove --purge -y partclone || true
+apt-get autoremove --purge -y || true
+
+# 安装 rescuezilla 主包
+if [ -f /rescuezilla*deb ]; then
+    if ! gdebi --non-interactive /rescuezilla*deb; then
+        echo "Trying force install with dpkg..."
+        dpkg -i --force-overwrite --force-depends /rescuezilla*deb
+        apt-get install -f -y
+    fi
+fi
+rm -f /rescuezilla.*deb
+
+# 安装其他依赖包
+for f in /*.deb; do
+    if [ -f "$f" ]; then
+        echo "Installing $f..."
+        if ! gdebi --non-interactive "$f"; then
+            echo "Trying force install with dpkg..."
+            dpkg -i --force-overwrite --force-depends "$f"
+            apt-get install -f -y
+        fi
+        dpkg -c "$f"
+    fi
 done
 
-# Delete the now-installed deb files from the chroot filesystem
-rm /*.deb
+# 清理已安装的 deb 文件
+rm -f /*.deb
 
+# 恢复 partclone.xfs 备份
 echo "Deploying Ubuntu repository partclone.xfs binary after installing newer partclone. See #367"
-mv /partclone.xfs /usr/sbin/
+if [ -f /partclone.xfs.backup ]; then
+    mv /partclone.xfs.backup /usr/sbin/partclone.xfs
+    chmod 755 /usr/sbin/partclone.xfs
+fi
 
-# Add reasonable xdg-open MIME associations based on Ubuntu user file
-mkdir --parents /root/.local/share/applications/
+# 配置系统设置
+mkdir -p /root/.local/share/applications/
 rsync -aP /home/ubuntu/.local/share/applications/mimeapps.list /root/.local/share/applications/
 
 update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal
@@ -48,44 +61,33 @@ update-alternatives --set default.plymouth /usr/share/plymouth/themes/rescuezill
 
 update-initramfs -u
 
-# Remove unused packages (such as old linux kernels, if present)
-# 
-# From `man apt-get`: autoremove is used to remove packages that were
-# automatically installed to satisfy dependencies for other packages and are
-# now no longer needed.
-sudo apt-get --yes autoremove
+# 系统清理
+apt-get --yes autoremove
 
-rm /var/lib/dbus/machine-id
-rm /sbin/initctl
+rm -f /var/lib/dbus/machine-id
+rm -f /sbin/initctl
 dpkg-divert --rename --remove /sbin/initctl
 
-# Move downloaded apt packages and indexes to top-level chroot directory, to be
-# extracted out of chroot and saved for subsequent builds.
+# 保存和移动 apt 缓存
 mv /var/cache/apt/archives /var.cache.apt.archives
 mv /var/lib/apt/lists /var.lib.apt.lists
-# From `man apt-get`: "clears out the local repository of retrieved package
-# files. It removes everything but the lock file from /var/cache/apt/archives/
-# and /var/cache/apt/archives/partial/."
 apt-get clean
 
-# Disable systemd's built-in NTP time synchronization service by manually masking it (`systemctl mask`)
-# using a symlink. This timesyncd service always modifies the hardware clock, and there
-# does not appear to be a way to prevent this service from modifying the hardware clock.
-# See [1] for more discussion.
-# [1] https://github.com/rescuezilla/rescuezilla/issues/107
-rm /etc/systemd/system/systemd-timesyncd.service
+# 禁用 systemd-timesyncd 服务
+rm -f /etc/systemd/system/systemd-timesyncd.service
 ln -s /dev/null /etc/systemd/system/systemd-timesyncd.service
 
-# Replace host system's resolv.conf with Google DNS
-cat << EOF > /etc/resolv.conf
+# 配置 DNS
+cat > /etc/resolv.conf << EOF
 nameserver 8.8.8.8
 nameserver 8.8.4.4
 EOF
 
+# 清理临时文件并卸载文件系统
 rm -rf /tmp/*
 rm -rf /var/lib/apt/lists/????????*
-umount -lf /proc
-umount -lf /sys
-umount -lf /dev/pts
+umount -lf /proc || true
+umount -lf /sys || true
+umount -lf /dev/pts || true
 
 exit 0
