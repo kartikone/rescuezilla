@@ -390,43 +390,82 @@ cd image
 
 # Create EFI directory structure for ARM64
 # Modified for ARM64 - Using ARM64-specific files
+# Modify this section in the build script where ARM64 EFI setup is happening
 if [ "$ARCH" == "arm64" ]; then
     mkdir --parents "$BUILD_DIRECTORY/image/EFI/BOOT/"
     
-    # Check if required ARM64 UEFI bootloader files are available
-    if [ -f "/usr/lib/grub/arm64-efi/grubaa64.efi" ]; then
-        cp /usr/lib/grub/arm64-efi/grubaa64.efi "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
-    else
-        echo "Warning: ARM64 UEFI bootloader not found. Attempting to install grub-efi-arm64-signed package to get required files."
-        apt-get update && apt-get install -y grub-efi-arm64-signed
-        if [ -f "/usr/lib/grub/arm64-efi/grubaa64.efi" ]; then
-            cp /usr/lib/grub/arm64-efi/grubaa64.efi "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
-        else
-            echo "Error: Could not find ARM64 UEFI bootloader grubaa64.efi."
-            exit 1
+    # Check multiple possible locations for ARM64 UEFI bootloader files
+    POSSIBLE_GRUB_LOCATIONS=(
+        "/usr/lib/grub/arm64-efi/grubaa64.efi"
+        "/usr/share/grub/arm64-efi/grubaa64.efi"
+        "/usr/lib/grub-efi-arm64/grubaa64.efi"
+        "/boot/efi/EFI/ubuntu/grubaa64.efi"
+        "/usr/lib/grub-efi-arm64-signed/grubaa64.efi.signed"
+    )
+    
+    FOUND_BOOTLOADER=false
+    for location in "${POSSIBLE_GRUB_LOCATIONS[@]}"; do
+        if [ -f "$location" ]; then
+            echo "Found ARM64 UEFI bootloader at $location"
+            cp "$location" "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
+            FOUND_BOOTLOADER=true
+            break
+        fi
+    done
+    
+    # If not found in standard locations, try to generate it
+    if [ "$FOUND_BOOTLOADER" = false ]; then
+        echo "No pre-built ARM64 UEFI bootloader found. Attempting to install and generate one..."
+        apt-get update && apt-get install -y grub-efi-arm64 grub-efi-arm64-bin
+        
+        # Try to generate the bootloader
+        if command -v grub-mkimage > /dev/null; then
+            echo "Generating ARM64 UEFI bootloader with grub-mkimage..."
+            grub-mkimage --directory=/usr/lib/grub/arm64-efi \
+                --prefix=/boot/grub \
+                --output="$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI" \
+                --format=arm64-efi \
+                --compression=auto \
+                part_gpt part_msdos fat ext2 normal boot linux configfile loopback chain efifwsetup efi_gop \
+                efi_uga ls search search_label search_fs_uuid search_fs_file gfxterm gfxterm_background \
+                gfxterm_menu test all_video loadenv exfat ntfs btrfs hfsplus iso9660 udf
+                
+            FOUND_BOOTLOADER=true
         fi
     fi
     
-    # Copy ARM64 GRUB modules if available
+    # Final check if bootloader was found or generated
+    if [ "$FOUND_BOOTLOADER" = false ]; then
+        echo "Error: Failed to find or generate ARM64 UEFI bootloader."
+        exit 1
+    fi
+    
+    # Similar approach for GRUB modules
     if [ -d "/usr/lib/grub/arm64-efi" ]; then
-        cp -r /usr/lib/grub/arm64-efi "$BUILD_DIRECTORY/image/boot/grub/"
+        mkdir -p "$BUILD_DIRECTORY/image/boot/grub/arm64-efi"
+        cp -r /usr/lib/grub/arm64-efi/* "$BUILD_DIRECTORY/image/boot/grub/arm64-efi/"
+    elif [ -d "/usr/lib/grub-efi-arm64" ]; then
+        mkdir -p "$BUILD_DIRECTORY/image/boot/grub/arm64-efi"
+        cp -r /usr/lib/grub-efi-arm64/* "$BUILD_DIRECTORY/image/boot/grub/arm64-efi/"
     else
-        echo "Warning: ARM64 GRUB modules not found. Attempting to install grub-efi-arm64 package to get required files."
-        apt-get update && apt-get install -y grub-efi-arm64
-        if [ -d "/usr/lib/grub/arm64-efi" ]; then
-            cp -r /usr/lib/grub/arm64-efi "$BUILD_DIRECTORY/image/boot/grub/"
-        else
-            echo "Error: Could not find ARM64 GRUB modules."
-            exit 1
+        echo "Warning: Could not find ARM64 GRUB modules. Creating minimal directory structure."
+        mkdir -p "$BUILD_DIRECTORY/image/boot/grub/arm64-efi"
+    fi
+    
+    # Create GRUB font directory and copy unicode font
+    mkdir -p "$BUILD_DIRECTORY/image/boot/grub/fonts"
+    if [ -f "/usr/share/grub/unicode.pf2" ]; then
+        cp /usr/share/grub/unicode.pf2 "$BUILD_DIRECTORY/image/boot/grub/fonts"
+    else
+        echo "Warning: Unicode font not found. Trying to generate it..."
+        if command -v grub-mkfont > /dev/null; then
+            apt-get install -y fonts-dejavu
+            grub-mkfont --output="$BUILD_DIRECTORY/image/boot/grub/fonts/unicode.pf2" \
+                        --size=16 /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
         fi
     fi
     
-    # Create GRUB font directory
-    mkdir -p "$BUILD_DIRECTORY/image/boot/grub/fonts"
-    
-    # Deploy unicode font
-    cp /usr/share/grub/unicode.pf2 "$BUILD_DIRECTORY/image/boot/grub/fonts"
-    
+    #     
     # Create ESP image for ARM64
     ESP_FAT_IMAGE="$BUILD_DIRECTORY/image/boot/esp.img"
     rm -f "$ESP_FAT_IMAGE"
