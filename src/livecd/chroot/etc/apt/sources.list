@@ -8,11 +8,29 @@
 # [1] http://archive.ubuntu.com/ubuntu
 # [2] http://old-releases.ubuntu.com/ubuntu
 
-deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE main universe multiverse
-deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-updates main universe multiverse
-deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-security main universe multiverse
+#deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE main universe multiverse
+#deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-updates main universe multiverse
+#deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-security main universe multiverse
 
 # Backports and proposed configured with a preference file to ensure its never
 # automatically selected
-deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-backports main universe multiverse
-deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-proposed main universe multiverse
+#deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-backports main universe multiverse
+#deb http://archive.ubuntu.com/ubuntu CODENAME_SUBSTITUTE-proposed main universe multiverse
+# Note: After the support window for a specific release ends, the packages are
+# moved from the main URL [1], to the 'old-releases' URL [2]. This makes
+# substitution mandatory in-order to build older releases from scratch.
+# 
+# Changing the URL to a mirror geographically closer mirror may increase
+# network transfer rates.
+#
+# [1] http://ports.ubuntu.com/ubuntu-ports
+# [2] http://old-releases.ubuntu.com/ubuntu
+
+deb http://ports.ubuntu.com/ubuntu-ports CODENAME_SUBSTITUTE main universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports CODENAME_SUBSTITUTE-updates main universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports CODENAME_SUBSTITUTE-security main universe multiverse
+
+# Backports and proposed configured with a preference file to ensure its never
+# automatically selected
+deb http://ports.ubuntu.com/ubuntu-ports CODENAME_SUBSTITUTE-backports main universe multiverse
+deb http://ports.ubuntu.com/ubuntu-ports CODENAME_SUBSTITUTE-proposed main universe multiverse
