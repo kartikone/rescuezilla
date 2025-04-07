@@ -394,15 +394,15 @@ if [ "$ARCH" == "arm64" ]; then
     mkdir --parents "$BUILD_DIRECTORY/image/EFI/BOOT/"
     
     # Check if required ARM64 UEFI bootloader files are available
-    if [ -f "/usr/lib/grub/arm64-efi/grub.efi" ]; then
-        cp /usr/lib/grub/arm64-efi/grub.efi "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
+    if [ -f "/usr/lib/grub/arm64-efi/grubaa64.efi" ]; then
+        cp /usr/lib/grub/arm64-efi/grubaa64.efi "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
     else
-        echo "Warning: ARM64 UEFI bootloader not found. Installing grub-efi-arm64 package to get required files."
-        apt-get update && apt-get install -y grub-efi-arm64
-        if [ -f "/usr/lib/grub/arm64-efi/grub.efi" ]; then
-            cp /usr/lib/grub/arm64-efi/grub.efi "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
+        echo "Warning: ARM64 UEFI bootloader not found. Attempting to install grub-efi-arm64-signed package to get required files."
+        apt-get update && apt-get install -y grub-efi-arm64-signed
+        if [ -f "/usr/lib/grub/arm64-efi/grubaa64.efi" ]; then
+            cp /usr/lib/grub/arm64-efi/grubaa64.efi "$BUILD_DIRECTORY/image/EFI/BOOT/BOOTAA64.EFI"
         else
-            echo "Error: Could not find ARM64 UEFI bootloader."
+            echo "Error: Could not find ARM64 UEFI bootloader grubaa64.efi."
             exit 1
         fi
     fi
@@ -410,6 +410,15 @@ if [ "$ARCH" == "arm64" ]; then
     # Copy ARM64 GRUB modules if available
     if [ -d "/usr/lib/grub/arm64-efi" ]; then
         cp -r /usr/lib/grub/arm64-efi "$BUILD_DIRECTORY/image/boot/grub/"
+    else
+        echo "Warning: ARM64 GRUB modules not found. Attempting to install grub-efi-arm64 package to get required files."
+        apt-get update && apt-get install -y grub-efi-arm64
+        if [ -d "/usr/lib/grub/arm64-efi" ]; then
+            cp -r /usr/lib/grub/arm64-efi "$BUILD_DIRECTORY/image/boot/grub/"
+        else
+            echo "Error: Could not find ARM64 GRUB modules."
+            exit 1
+        fi
     fi
     
     # Create GRUB font directory
