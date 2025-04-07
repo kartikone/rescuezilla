@@ -130,7 +130,6 @@ partclone-latest:
 	# Verify the package exists
 	test -f $(ARM64_BUILD_DIR)/chroot/partclone_0.3.27+repack-2build2_arm64.deb || (echo "Failed to download partclone package" && exit 1)
 	#mv $(PARTCLONE_LATEST_BUILD_DIR)/partclone_$(PARTCLONE_PKG_VERSION)-1_arm64.deb $(ARM64_BUILD_DIR)/chroot/
-	mv $(ARM64_BUILD_DIR)/chroot/partclone_0.3.27+repack-2build2_arm64.deb $(ARM64_BUILD_DIR)/chroot/
 	# Use the partclone binary from the host environment
 	# Check if partclone exists, and copy it if available
 	#which partclone
