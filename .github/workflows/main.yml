@@ -30,6 +30,12 @@ jobs:
                          libreiser4-dev libtinfo-dev libxslt1.1 nilfs-tools ntfs-3g ntfs-3g-dev \
                          quilt sgml-base uuid-dev vmfs-tools xfslibs-dev xfsprogs xml-core \
                          xsltproc ccache libssl-dev
+        gcc --version
+        sudo apt install gcc-8 g++-8
+        sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80
+        sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 80
+        sudo update-alternatives --config gcc
+        sudo update-alternatives --config g++
                          
     - name: Initialize submodules
       run: |
