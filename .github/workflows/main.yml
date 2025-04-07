@@ -53,7 +53,7 @@ jobs:
         # Build the amd64 ISO image based on Ubuntu 20.04 (Focal), and the deb files.
         # This should work on Ubuntu or Ubuntu-derived distributions, but is _not_ recommended
         # Debian or Debian-derived environments (see "EFI Secure Boot" section below).
-        sudo make oracular
+        sudo make noble
         
     - name: Upload ISO
       uses: actions/upload-artifact@v4
