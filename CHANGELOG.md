@@ -1,5 +1,5 @@
 #  Rescuezilla v2.6 (2025-03-23)
-
+* iso build passing, iso file testing unkown
 * Updated the UEFI Secure Boot shim package to v1.58 after a Windows 11 update revoked older shims by incrementing the minimum "SBAT generation"([#525](https://github.com/rescuezilla/rescuezilla/issues/525))
     * This fixes any "SBAT self-check failed" errors to ensure Rescuezilla continues boot on UEFI Secure Boot enabled systems which require the latest "SBAT generation"
     * This also fixes the "revoked UEFI bootloader" message warning when creating a bootable USB stick using Rufus
