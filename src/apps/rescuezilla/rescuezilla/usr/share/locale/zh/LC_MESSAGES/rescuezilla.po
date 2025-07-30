@@ -4,23 +4,25 @@
 # mzky, 2021
 # Submitted at: https://github.com/rescuezilla/rescuezilla/issues/191
 #
-# 池边树下 <mzky@163.com>, 2021.
+# 池边树下 <mzky@163.com>, 2021, 2025.
 # Eric <hamburger2048@users.noreply.hosted.weblate.org>, 2023.
+# 大王叫我来巡山 <hamburger2048@users.noreply.hosted.weblate.org>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 00:00+0000\n"
-"PO-Revision-Date: 2023-06-23 20:34+0000\n"
-"Last-Translator: Eric <hamburger2048@users.noreply.hosted.weblate.org>\n"
-"Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
-"rescuezilla/rescuezilla/zh_Hans/>\n"
+"PO-Revision-Date: 2025-06-26 04:01+0000\n"
+"Last-Translator: 大王叫我来巡山 "
+"<hamburger2048@users.noreply.hosted.weblate.org>\n"
+"Language-Team: Chinese (Simplified Han script) <https://hosted.weblate.org/"
+"projects/rescuezilla/rescuezilla/zh_Hans/>\n"
 "Language: zh\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.18.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Welcome"
 msgstr "欢迎"
@@ -29,7 +31,7 @@ msgid "Select an Option"
 msgstr "选择一个选项"
 
 msgid "Easily create a backup image of your computer, or completely restore from one.  Click an option to begin:"
-msgstr "轻松创建计算机备份镜像或完整的还原。点击一个选项开始："
+msgstr "轻松创建计算机的备份镜像或从一个镜像完全恢复。点击一个选项开始："
 
 msgid "Backup"
 msgstr "备份"
@@ -52,11 +54,11 @@ msgstr "后退"
 msgid "Next >"
 msgstr "下一步 >"
 
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "请稍候…"
 
-msgid "Identifying disk drives..."
-msgstr "识别磁盘驱动器..."
+msgid "Identifying disk drives…"
+msgstr "识别磁盘驱动器…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
@@ -75,7 +77,7 @@ msgid "Running {app} on {device}"
 msgstr "在 {device}上运行 {app}"
 
 msgid "Failed to run command: "
-msgstr "运行命令失败。 "
+msgstr "运行命令失败： "
 
 msgid "Error querying drives: "
 msgstr "查询驱动器时出错： "
@@ -240,6 +242,39 @@ msgstr "域"
 msgid "Version"
 msgstr "版本"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr "默认（协商最高 SMB2+客户端服务器支持）"
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr "1.0 （老旧 CIFS/SMBv1 协议）"
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr "2.0 （在 Vista SP1、Windows Server 2008 中引入）"
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr "2.1（在 Windows 7、Windows Server 2008R2 中引入）"
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr "3 （SMBv3.0 协议版及更高）"
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr "3.0 （在 Windows 8、Windows Server 2012 中引入）"
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr "3.0.2 （在 Windows 8.1、Windows Server 2012R2 中引入）"
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr "3.1.1 （在 Windows 10、Windows Server 2016 中引入）"
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr "未指定（先尝试 NFS v4.2，接着和服务器向下协商版本，直至找到支持的版本）"
+
+msgid "NFSv3"
+msgstr "NFSv3"
+
+msgid "NFSv4"
+msgstr "NFSv4"
+
 msgid "Remote path"
 msgstr "远程路径"
 
@@ -249,8 +284,8 @@ msgstr "导出路径"
 msgid "Identity File"
 msgstr "身份文件"
 
-msgid "Optional"
-msgstr "可选"
+msgid "Port"
+msgstr "端口"
 
 msgid "Select network-shared storage location:"
 msgstr "选择网络共享存储位置："
@@ -261,8 +296,8 @@ msgstr "选择将镜像文件保存到的分区"
 msgid "Partition"
 msgstr "分区"
 
-msgid "Mounting..."
-msgstr "正在挂载..."
+msgid "Mounting…"
+msgstr "正在挂载…"
 
 msgid "Close this popup to cancel the mount operation."
 msgstr "关闭此弹出窗口以取消挂载操作。"
@@ -273,8 +308,8 @@ msgstr "请确保提供的账号、密码和其他字段正确，然后重试。
 msgid "Must provide either password or SSH identity file."
 msgstr "必须提供密码或SSH身份文件。"
 
-msgid "Scanning folder for backup images..."
-msgstr "扫描文件夹中的备份镜像..."
+msgid "Scanning folder for backup images…"
+msgstr "扫描文件夹中的备份镜像…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -344,8 +379,8 @@ msgstr "请选择其它文件夹。"
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr "下表列出了此文件夹中已经存在的备份镜像（如果有）。"
 
-msgid "Browse..."
-msgstr "浏览..."
+msgid "Browse…"
+msgstr "浏览…"
 
 msgid "Filename"
 msgstr "文件名"
@@ -545,9 +580,6 @@ msgstr "从备份中选择要还原的分区，以及是否覆盖分区表。<b>
 msgid "Selected image"
 msgstr "选中镜像"
 
-msgid "Destination device"
-msgstr "目标设备"
-
 msgid "Destination partition"
 msgstr "目标分区"
 
@@ -582,8 +614,8 @@ msgstr "不还原此分区"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "当你准备继续时，点击<b>下一步</b>。"
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
-msgstr "扫描和卸载任何逻辑卷管理器（LVM）逻辑卷..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
+msgstr "扫描和卸载任何逻辑卷管理器（LVM）逻辑卷…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -645,8 +677,8 @@ msgstr "更新分区表"
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr "{description} 将还原到 {destination_partition} ({destination_description})"
 
-msgid "Synchronizing disks..."
-msgstr "同步磁盘..."
+msgid "Synchronizing disks…"
+msgstr "同步磁盘…"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -657,8 +689,8 @@ msgid "Probing {device} with {app}"
 msgstr "用{app}探测{device}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
-msgstr "正在产生文件系统{partition}（{filesystem}）。可能还要等一下..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
+msgstr "正在产生文件系统{partition}（{filesystem}）。可能还要等一下…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -696,8 +728,8 @@ msgstr "更新initramfs（如果有）"
 msgid "Successfully updated initramfs"
 msgstr "成功更新了initramfs"
 
-msgid "Updating EFI NVRAM..."
-msgstr "正在更新EFI NVRAM ..."
+msgid "Updating EFI NVRAM…"
+msgstr "正在更新EFI NVRAM …"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "成功更新了EFI NVRAM"
@@ -765,8 +797,8 @@ msgstr "点击<b>挂载</b>来挂载备份镜像（作为只读）。"
 msgid "Mount"
 msgstr "挂载"
 
-msgid "Mounting as read-only..."
-msgstr "挂载为只读..."
+msgid "Mounting as read-only…"
+msgstr "挂载为只读…"
 
 msgid "Unmount"
 msgstr "卸载"
@@ -780,7 +812,7 @@ msgstr "在文件管理器中打开"
 msgid "Verify"
 msgstr "验证"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "选择要验证的一个或多个镜像。"
 
 msgid "To begin verification, click <b>Next</b>."

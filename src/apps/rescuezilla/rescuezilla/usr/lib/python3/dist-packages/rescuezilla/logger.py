@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------
-#   Copyright (C) 2019-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2019-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 import os
 import sys
 import threading
+
 
 class Logger:
     # Logger to help debugging.
@@ -45,7 +46,7 @@ class Logger:
                 self.stdout.write(message)
             try:
                 self.file.write(message)
-            except:
+            except Exception:
                 print("Could not write log message to file: " + message)
 
     def close(self):

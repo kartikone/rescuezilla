@@ -41,8 +41,14 @@ for f in /*.deb; do
     fi
 done
 
-# 清理已安装的 deb 文件
-rm -f /*.deb
+# Extra validation for the Image Explorer (beta)'s underlying app, in case
+# something went wrong in its relatively complex build environment.
+if [[ ! -f "/usr/local/bin/partclone-nbd" ]]; then
+    echo "Error: failed to find partclone-nbd binary in expected location"
+fi
+
+# Delete the now-installed deb files from the chroot filesystem
+rm /*.deb
 
 # 恢复 partclone.xfs 备份
 echo "Deploying Ubuntu repository partclone.xfs binary after installing newer partclone. See #367"
@@ -54,6 +60,11 @@ fi
 # 配置系统设置
 mkdir -p /root/.local/share/applications/
 rsync -aP /home/ubuntu/.local/share/applications/mimeapps.list /root/.local/share/applications/
+
+# Set the default xdg-open MIME association for root user on folder paths
+# to use PCManFM file manager, rather that baobab (GNOME disks)
+# Required for Image Explorer, as it uses 'xdg-open' on a folder path
+xdg-mime default pcmanfm.desktop inode/directory
 
 update-alternatives --set x-terminal-emulator /usr/bin/xfce4-terminal
 update-alternatives --install /usr/share/plymouth/themes/default.plymouth default.plymouth /usr/share/plymouth/themes/rescuezilla-logo/rescuezilla-logo.plymouth 100

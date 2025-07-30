@@ -1,5 +1,8 @@
-.DEFAULT_GOAL := oracular
-.PHONY: all focal lunar jammy oracular noble bionic-i386 deb sfdisk.v2.20.1.arm64 partclone.restore.v0.2.43.arm64 partclone-latest partclone-utils partclone-nbd install test integration-test clean-build-dir clean clean-all
+.DEFAULT_GOAL := plucky
+.PHONY: all focal lunar jammy oracular plucky noble bionic-i386 deb sfdisk.v2.20.1.amd64 partclone.restore.v0.2.43.amd64 partclone-latest partclone-utils partclone-nbd install test integration-test clean-build-dir clean clean-all
+
+# Include Python tooling makefile
+include src/scripts/mk/python.mk
 
 # FIXME: Properly specify the build artifacts to allow the GNU make to actually be smart about what gets built and when.
 # FIXME: This lack of specifying dependency graph means requires eg, `make focal` and `make lunar` has to be done as separate invocations
@@ -24,19 +27,25 @@ buildscripts = src/scripts/build.sh src/scripts/chroot-steps-part-1.sh src/scrip
 focal: ARCH=arm64
 focal: CODENAME=focal
 export ARCH CODENAME
-focal: deb sfdisk.v2.20.1.arm64 partclone-latest $(buildscripts)
+focal: deb sfdisk.v2.20.1.amd64 partclone-latest partclone-nbd $(buildscripts)
 	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh
 
 jammy: ARCH=arm64
 jammy: CODENAME=jammy
 export ARCH CODENAME
-jammy: deb sfdisk.v2.20.1.arm64 partclone-latest $(buildscripts)
+jammy: deb sfdisk.v2.20.1.amd64 partclone-latest partclone-nbd $(buildscripts)
 	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh	
 
 oracular: ARCH=arm64
 oracular: CODENAME=oracular
 export ARCH CODENAME
-oracular: deb sfdisk.v2.20.1.arm64 partclone-latest $(buildscripts)
+oracular: deb sfdisk.v2.20.1.amd64 partclone-latest partclone-nbd $(buildscripts)
+	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh	
+
+plucky: ARCH=amd64
+plucky: CODENAME=plucky
+export ARCH CODENAME
+plucky: deb sfdisk.v2.20.1.amd64 partclone-latest partclone-nbd $(buildscripts)
 	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh	
 
 # Note: Ubuntu 24.04 (Long Term Support) won't be released until around April 2024, as per the version string
@@ -44,7 +53,7 @@ oracular: deb sfdisk.v2.20.1.arm64 partclone-latest $(buildscripts)
 noble: ARCH=arm64
 noble: CODENAME=noble
 export ARCH CODENAME
-noble: deb sfdisk.v2.20.1.arm64 partclone-latest $(buildscripts)
+noble: deb sfdisk.v2.20.1.amd64 partclone-latest partclone-nbd $(buildscripts)
 	BASE_BUILD_DIRECTORY=$(BASE_BUILD_DIRECTORY) /usr/bin/time ./src/scripts/build.sh	
 
 # ISO image based on Ubuntu 18.04 Bionic LTS (Long Term Support) 32bit (the last 32bit/i386 Ubuntu LTS release)
@@ -109,9 +118,9 @@ partclone.restore.v0.2.43.arm64:
 	cd $(SRC_DIR) && git checkout -- config.h.in configure
 
 partclone-latest: SRC_DIR=$(shell pwd)/src/third-party/partclone-latest
-partclone-latest: ARM64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
-partclone-latest: PARTCLONE_LATEST_BUILD_DIR=$(ARM64_BUILD_DIR)/partclone-latest
-partclone-latest: PARTCLONE_PKG_VERSION=0.3.33
+partclone-latest: AMD64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
+partclone-latest: PARTCLONE_LATEST_BUILD_DIR=$(AMD64_BUILD_DIR)/partclone-latest
+partclone-latest: PARTCLONE_PKG_VERSION=0.3.37
 partclone-latest:
 	# DANGER: Deletes build folder recursively. This can end very badly if a variable is not defined correctly.
 	# TODO: FIX THIS
@@ -167,12 +176,13 @@ partclone-nbd: SRC_DIR=$(shell pwd)/src/third-party/partclone-nbd
 partclone-nbd: ARM64_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/$(CODENAME).$(ARCH)
 partclone-nbd: PARTCLONE_NBD_BUILD_DIR=$(BASE_BUILD_DIRECTORY)/partclone-nbd
 partclone-nbd:
-	mkdir --parents $(PARTCLONE_NBD_BUILD_DIR) $(ARM64_BUILD_DIR)/chroot/
+	mkdir --parents $(PARTCLONE_NBD_BUILD_DIR) $(AMD64_BUILD_DIR)/chroot/
+	# Create build scripts with cmake
 	cd $(PARTCLONE_NBD_BUILD_DIR) && cmake ${SRC_DIR}
-	cd $(PARTCLONE_NBD_BUILD_DIR) && make
-	# Create deb package from a standard Makefile's `make install` using the checkinstall tool (for cleaner uninstall)
-	cd $(PARTCLONE_NBD_BUILD_DIR) && sudo checkinstall --default --install=no --nodoc --pkgname partclone-nbd --pkgversion 0.0.3 --pkgrelease 1 --maintainer 'rescuezilla@gmail.com' make install
-	mv $(PARTCLONE_NBD_BUILD_DIR)/partclone-nbd_0.0.3-1_arm64.deb $(ARM64_BUILD_DIR)/chroot/
+	# Compile and package DEB. Override the user-managed /opt target installation directory with /usr/local since
+	# build scripts constitutes the system administrator of the operating system being constructed so /opt is less appropriate
+	cd $(PARTCLONE_NBD_BUILD_DIR) && cpack -D CPACK_PACKAGING_INSTALL_PREFIX="/usr/local" -G DEB
+	mv $(PARTCLONE_NBD_BUILD_DIR)/_packages/partclone-nbd_0.0.4_amd64.deb $(AMD64_BUILD_DIR)/chroot/
 
 clean-build-dir:
 	$(info * Unmounting chroot bind mounts)
@@ -253,13 +263,24 @@ docker-run:
 	docker exec --interactive --workdir=/home/rescuezilla/ builder.container ./src/scripts/git-add-safe-directory.sh
 
 docker-stop:
-	docker stop builder.container
+	docker stop builder.container || true
+	# Stop the containing with an alternative name. It's not immediately clear where leading forward slash is occurring.
+	docker stop /builder.container || true
 
 docker-add-safe-directory:
 	docker exec --interactive --workdir=/home/rescuezilla/ builder.container ./src/scripts/git-add-safe-directory.sh
 
 docker-test:
 	docker exec --interactive --workdir=/home/rescuezilla/ builder.container make test
+
+docker-check:
+	docker exec --interactive --workdir=/home/rescuezilla/ builder.container bash -c ". /root/.local/bin/env && make check"
+
+docker-lint:
+	docker exec --interactive --workdir=/home/rescuezilla/ builder.container bash -c ". /root/.local/bin/env && make lint"
+
+docker-fmt:
+	docker exec --interactive --workdir=/home/rescuezilla/ builder.container bash -c ". /root/.local/bin/env && make fmt"
 
 docker-status:
 	docker exec --interactive --workdir=/home/rescuezilla/ builder.container make status
@@ -280,6 +301,9 @@ docker-lunar:
 
 docker-oracular:
 	docker exec --interactive --workdir=/home/rescuezilla/ builder.container make oracular
+
+docker-plucky:
+	docker exec --interactive --workdir=/home/rescuezilla/ builder.container make plucky
 
 docker-noble:
 	docker exec --interactive --workdir=/home/rescuezilla/ builder.container make noble

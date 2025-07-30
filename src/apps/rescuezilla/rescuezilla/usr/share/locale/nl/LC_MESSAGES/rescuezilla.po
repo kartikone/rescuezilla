@@ -56,10 +56,10 @@ msgstr "Terug"
 msgid "Next >"
 msgstr "Volgende >"
 
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Ogenblik…"
 
-msgid "Identifying disk drives..."
+msgid "Identifying disk drives…"
 msgstr "Schijfstations identificeren…"
 
 #, python-brace-format
@@ -263,6 +263,39 @@ msgstr "Domein"
 msgid "Version"
 msgstr "Versie"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr "Remote pad"
 
@@ -272,8 +305,8 @@ msgstr "Geëxporteerd pad"
 msgid "Identity File"
 msgstr "Identificatiebestand"
 
-msgid "Optional"
-msgstr "Optioneel"
+msgid "Port"
+msgstr ""
 
 msgid "Select network-shared storage location:"
 msgstr "Selecteer netwerk-gedeeld opslag locatie:"
@@ -284,8 +317,8 @@ msgstr "Selecteer de partitie waar de imagebestanden zullen worden opgeslagen"
 msgid "Partition"
 msgstr "Partitie"
 
-msgid "Mounting..."
-msgstr "Aankoppelen..."
+msgid "Mounting…"
+msgstr "Aankoppelen…"
 
 msgid "Close this popup to cancel the mount operation."
 msgstr "Sluit deze pop-up om de koppelingsbewerking te annuleren."
@@ -298,8 +331,8 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr "U moet een wachtwoord of SSH-identiteitsbestand opgeven."
 
-msgid "Scanning folder for backup images..."
-msgstr "Map scannen op back-up images..."
+msgid "Scanning folder for backup images…"
+msgstr "Map scannen op back-up images…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -389,8 +422,8 @@ msgstr ""
 "De onderstaande tabel bevat de back-up images die zich al in deze map "
 "bevinden (indien aanwezig)."
 
-msgid "Browse..."
-msgstr "Bladeren..."
+msgid "Browse…"
+msgstr "Bladeren…"
 
 msgid "Filename"
 msgstr "Bestandsnaam"
@@ -608,9 +641,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Geselecteerde image"
 
-msgid "Destination device"
-msgstr "Doelschijf"
-
 msgid "Destination partition"
 msgstr "Doelpartitie"
 
@@ -662,10 +692,10 @@ msgstr "Deze partitie wordt niet hersteld"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "Wanneer u klaar bent om door te gaan, klikt u op <b>Volgende</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
 "Alle logische volumes van Logical Volume Manager (LVM) scannen en "
-"ontkoppelen..."
+"ontkoppelen…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -740,8 +770,8 @@ msgstr ""
 "Herstellen van {description} naar {destination_partition} "
 "({destination_description})"
 
-msgid "Synchronizing disks..."
-msgstr "Schijven synchroniseren..."
+msgid "Synchronizing disks…"
+msgstr "Schijven synchroniseren…"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -752,9 +782,9 @@ msgid "Probing {device} with {app}"
 msgstr "{device} onderzoeken met {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
-"Groeiend bestandssysteem {partition} ({filesystem}). Dit kan even duren..."
+"Groeiend bestandssysteem {partition} ({filesystem}). Dit kan even duren…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -795,8 +825,8 @@ msgstr "Initramfs aan het bijwerken (indien van toepassing)"
 msgid "Successfully updated initramfs"
 msgstr "Succesvol initramfs bijgewerkt"
 
-msgid "Updating EFI NVRAM..."
-msgstr "EFI NVRAM bijwerken..."
+msgid "Updating EFI NVRAM…"
+msgstr "EFI NVRAM bijwerken…"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "EFI NVRAM succesvol bijgewerkt"
@@ -875,8 +905,8 @@ msgstr ""
 msgid "Mount"
 msgstr "Koppelen"
 
-msgid "Mounting as read-only..."
-msgstr "Koppelen als alleen-lezen..."
+msgid "Mounting as read-only…"
+msgstr "Koppelen als alleen-lezen…"
 
 msgid "Unmount"
 msgstr "Ontkoppelen"
@@ -892,7 +922,7 @@ msgstr "Openen in bestandsbeheer"
 msgid "Verify"
 msgstr "Verifiëren"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "Selecteer één of meer images om te verifiëren."
 
 msgid "To begin verification, click <b>Next</b>."

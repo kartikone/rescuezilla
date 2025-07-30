@@ -1,5 +1,5 @@
 # ----------------------------------------------------------------------
-#   Copyright (C) 2020-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2020-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -24,12 +24,12 @@ class Blkid:
         blkid_list = blkid_output.splitlines()
         for blkid_line in blkid_list:
             split = blkid_line.split(sep=":", maxsplit=1)
-            #print("Analysing " + str(split))
+            # print("Analysing " + str(split))
             long_dev_node = split[0]
             key_value_list = split[1].strip().split(sep='" ')
             blkid_dict[long_dev_node] = {}
             for key_value in key_value_list:
-                #print("Analysing key/value " + key_value)
+                # print("Analysing key/value " + key_value)
                 key_value_split = key_value.split(sep="=")
                 key = key_value_split[0]
                 value = key_value_split[1].strip('"')

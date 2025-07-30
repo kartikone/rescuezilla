@@ -1,12 +1,12 @@
 # Shasheen Ediriweera <shasheene@gmail.com>, 2021.
-# Yaron Shahrabani <sh.yaron@gmail.com>, 2021.
+# Yaron Shahrabani <sh.yaron@gmail.com>, 2021, 2025.
 # Mike Kolesnik <mkolesni@redhat.com>, 2021.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 00:00+0000\n"
-"PO-Revision-Date: 2021-11-23 15:21+0000\n"
+"PO-Revision-Date: 2025-07-01 20:01+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/he/>\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Welcome"
 msgstr "ברוך בואך"
@@ -54,10 +54,10 @@ msgstr "חזרה"
 msgid "Next >"
 msgstr "הבא >"
 
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "נא להמתין…"
 
-msgid "Identifying disk drives..."
+msgid "Identifying disk drives…"
 msgstr "הכוננים הקשיחים מזוהים…"
 
 #, python-brace-format
@@ -256,6 +256,42 @@ msgstr "שם תחום"
 msgid "Version"
 msgstr "גרסה"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+"ברירת מחדל (ניהול משא ומתן על ה־SMB2+‎ העדכני ביותר שהלקוח והשרת תומכים בו)"
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr "1.0 (פרוטוקול CIFS/SMBv1 הקלסי)"
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr "2.0 (הושק עם Vista SP1,‏ Windows Server 2008)"
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr "2.1 (הושק עםWindows 7,‏ Windows Server 2008R2)"
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr "3 (גרסת פרוטוקול SMBv3.0 ומעלה)"
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr "3.0 (הושק עם Windows 8,‏ Windows Server 2012)"
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr "3.0.2 (הושק עם Windows 8.1,‏ Windows Server 2012R2)"
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr "3.1.1 (הושק עם Windows 10,‏ Windows Server 2016)"
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+"לא הוגדר (מנסה את NFS v4.2 תחילה, לאחר מכן מנהל משא למתן עם השרת עד למציאת "
+"גרסה נתמכת)"
+
+msgid "NFSv3"
+msgstr "NFSv3"
+
+msgid "NFSv4"
+msgstr "NFSv4"
+
 msgid "Remote path"
 msgstr "נתיב מרוחק"
 
@@ -265,8 +301,8 @@ msgstr "נתיב מיוצא"
 msgid "Identity File"
 msgstr "קובץ זהות"
 
-msgid "Optional"
-msgstr "רשות"
+msgid "Port"
+msgstr "פתחה"
 
 msgid "Select network-shared storage location:"
 msgstr "נא לבחור מיקום אחסון משותף ברשת:"
@@ -277,7 +313,7 @@ msgstr "נא לבחור את המחיצה אליה יישמרו קובצי הג�
 msgid "Partition"
 msgstr "מחיצה"
 
-msgid "Mounting..."
+msgid "Mounting…"
 msgstr "מתבצע חיבור…"
 
 msgid "Close this popup to cancel the mount operation."
@@ -289,7 +325,7 @@ msgstr "נא לוודא ששם המשתמש, הססמה ושאר השדות שצ
 msgid "Must provide either password or SSH identity file."
 msgstr "יש לספק סיסמה או קובץ זהות SSH."
 
-msgid "Scanning folder for backup images..."
+msgid "Scanning folder for backup images…"
 msgstr "התיקייה נסרקת לאיתור קובצי גיבוי…"
 
 #, python-brace-format
@@ -368,7 +404,7 @@ msgstr "נא לבחור בתיקייה אחרת."
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr "הטבלה שלהלן מציגה את קובצי הגיבוי שכבר נמצאים בתיקייה הזאת (אם ישנם)."
 
-msgid "Browse..."
+msgid "Browse…"
 msgstr "עיון…"
 
 msgid "Filename"
@@ -577,9 +613,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "קובץ הגיבוי הנבחר"
 
-msgid "Destination device"
-msgstr "כונן היעד"
-
 msgid "Destination partition"
 msgstr "מחיצת היעד"
 
@@ -623,7 +656,7 @@ msgstr "מחיצה זו לא תשוחזר"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "כשסיימת להתכונן, יש ללחוץ על <b>הבא</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr "מתבצעת סריקה וניתוק של כוננים לוגיים ממנהל הכוננים הלוגיים (LVM)…"
 
 #, python-brace-format
@@ -694,7 +727,7 @@ msgid "Restoring {description} to {destination_partition} ({destination_descript
 msgstr ""
 "{description} משוחזר אל {destination_partition} ({destination_description})"
 
-msgid "Synchronizing disks..."
+msgid "Synchronizing disks…"
 msgstr "הכוננים מסונכרנים…"
 
 #, python-brace-format
@@ -706,7 +739,7 @@ msgid "Probing {device} with {app}"
 msgstr "מתבצע תשאול מול {device} עם {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr "מערכת הקבצים {partition} ({filesystem}) מתרחבת. זה עלול לקחת זמן מה…"
 
 #, python-brace-format
@@ -747,7 +780,7 @@ msgstr "initramfs מעודכן (אם קיים)"
 msgid "Successfully updated initramfs"
 msgstr "initramfs עודכן בהצלחה"
 
-msgid "Updating EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
 msgstr "ה־NVRAM של ה־EFI מתעדכן…"
 
 msgid "Successfully updated EFI NVRAM"
@@ -820,7 +853,7 @@ msgstr "לחיצה על <b>עיגון</b> תעגן את קובץ דמות הגי
 msgid "Mount"
 msgstr "עיגון"
 
-msgid "Mounting as read-only..."
+msgid "Mounting as read-only…"
 msgstr "מתבצע עיגון לקריאה בלבד…"
 
 msgid "Unmount"
@@ -837,7 +870,7 @@ msgstr "פתיחה במנהל הקבצים"
 msgid "Verify"
 msgstr "אימות"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "נא לבחור דמות אחת או יותר לאימות."
 
 msgid "To begin verification, click <b>Next</b>."

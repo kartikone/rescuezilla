@@ -1,11 +1,34 @@
-#  Rescuezilla v2.6 (2025-03-23)
-* iso build passing, iso file testing unkown
+# Rescuezilla v2.7 (unreleased)
+
+* Fixed blank error message window displayed after cloning (even on success), which causes the cancellation of the post-operation shutdown/restart request ([#588](https://github.com/rescuezilla/rescuezilla/issues/588#issuecomment-3098152217))
+
+# Rescuezilla v2.6.1 (2025-07-16)
+
+* Adds release based on Ubuntu 25.04 (Plucky) for best support of new hardware
+* Fixed regression where swap partitions stayed unintendedly mounted causing restore and clone operations to destination disks containing Linux swap partitions to fail ([#515](https://github.com/rescuezilla/rescuezilla/issues/515#issuecomment-2994462320))
+    * Impacted Ubuntu 23.10 (Mantic) and newer variants of Ubuntu 24.04 (Noble) and Ubuntu 24.10 (Oracular) so on the newer variants since Rescuezilla v2.5 (2024-05-12) 
+        * Fixed related (very minor) issue where the operating system time on these specific variants were not being initialized as intended due to 'hwclock' not being installed
+* Renabled Image Explorer (beta) after it was temporarily disabled in v2.6.0 ([#557](https://github.com/rescuezilla/rescuezilla/issues/557))
+    * Switched packaging the underlying "partclone-nbd" executable from the "checkinstall" wrapper to a more canonical packaging strategy using CMake's CPack (to avoid bug in 'checkinstall' script)
+* Enabled Firefox on the Ubuntu 24.10 (Oracular) release after it was temporarily excluded in v2.6.0 ([#556](https://github.com/rescuezilla/rescuezilla/issues/556))
+    * Switched to installing Firefox deb package from "packages.mozilla.org" rather than the "mozillateam" Ubuntu Personal Packaging Archive [#506](https://github.com/rescuezilla/rescuezilla/issues/506) (thanks engstk!)
+    * The "mozillateam" Ubuntu Personal Packaging Archive now wraps snap-based packages like the official Ubuntu repositories, which remain incompatible with Rescuezilla's "chroot"-based build scripts ([#364](https://github.com/rescuezilla/rescuezilla/issues/364))
+* Added ability to specify NFS version: NFSv3, NFSv4 and the (existing default) of automatically negotiating down [#408](https://github.com/rescuezilla/rescuezilla/issues/408) (thanks OAM7575!)
+* Improved touchpad support for tap-to-click and multifinger gestures using libinput driver [#506](https://github.com/rescuezilla/rescuezilla/issues/506) (thanks engstk!)  
+* Upgraded to latest partclone `0.3.37` (released June 2025) from partclone `0.3.33` (released December 2024)
+* Fixed some GTK theme readability and consistency issues eg, around the taskbar by switching from Breeze to Arc-Darker [#506](https://github.com/rescuezilla/rescuezilla/pull/506#issuecomment-3008830771) (thanks engstk!)
+* Added initial workaround to the "umount: /tmp/rescuezilla.ntfs/mount: target is busy" error that can block creating a Rescuezilla backup image or cloning on some machines, especially those that contain more than one NTFS partition ([#561](https://github.com/rescuezilla/rescuezilla/issues/561))
+* Extracted out a separate Portuguese (Brazillian) (pt_BR) translation entry from the existing Portuguese (Portugal) (pt) translation ([#410](https://github.com/rescuezilla/rescuezilla/issues/410)) (thanks hugok79!)
+* Fixed ability to create uncompressed images using experimental CLI by accepting "--compression-format=uncompressed" rather than 'none'
+
+# Rescuezilla v2.6 (2025-03-23)
+
 * Updated the UEFI Secure Boot shim package to v1.58 after a Windows 11 update revoked older shims by incrementing the minimum "SBAT generation"([#525](https://github.com/rescuezilla/rescuezilla/issues/525))
     * This fixes any "SBAT self-check failed" errors to ensure Rescuezilla continues boot on UEFI Secure Boot enabled systems which require the latest "SBAT generation"
     * This also fixes the "revoked UEFI bootloader" message warning when creating a bootable USB stick using Rufus
 * Replaced Ubuntu 23.10 (Mantic) and Ubuntu 22.10 (Lunar) builds with build based on Ubuntu 24.10 (Oracular) for best support of new hardware 
-    * Temporarily does not include Mozilla Firefox on Oracular release until switched to new source (#556)
-    * Image Explorer (beta) temporarily out-of-service across variants (#557)
+    * Temporarily does not include Mozilla Firefox on Oracular release until switched to new source ([#556](https://github.com/rescuezilla/rescuezilla/issues/556))
+    * Image Explorer (beta) temporarily out-of-service across variants ([#557](https://github.com/rescuezilla/rescuezilla/issues/557))
 * Fixed querying drives with the Bionic 32-bit version, which broke since Rescuezilla v2.5 due to using the --merge feature introduced in util-linux v2.34 ([#509](https://github.com/rescuezilla/rescuezilla/issues/509), [#531](https://github.com/rescuezilla/rescuezilla/issues/531))
 * Skips GPG check on Bionic 32-bit release to fix build (temporarily) until better solution identified ([#538](https://github.com/rescuezilla/rescuezilla/issues/538))
 * Upgraded to latest partclone `v0.3.33` (released mid-July 2024) from partclone `v0.3.27` (released October 2023)
@@ -312,7 +335,7 @@ from the dead by a new maintainer. This new fork is being developed under a new 
 * Switched to Hardware Enablement kernel for best support of new hardware (thanks OAM775!)
 * Ensured official image bootable as both USB drive and CD (v1.0.4 was only bootable as a CD)
 * Added SliM (Simple Login Manager) to fix boot sometimes failing to start graphical environment
-* Switched to running the graphical session as unpriviliged user, for improved security
+* Switched to running the graphical session as unprivileged user, for improved security
 * Removed deprecated gksu (graphical frontend to su/sudo), which was never necessary
 * Added PolicyKit policies to provide root privileges to certain applications (via pkexec)
 * Removed deprecated system-config-lvm (graphical LVM editor)

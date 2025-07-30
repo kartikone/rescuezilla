@@ -5,7 +5,7 @@
 # Submitted at: https://github.com/rescuezilla/rescuezilla/issues/154
 #
 # Shasheen Ediriweera <shasheene@gmail.com>, 2021, 2022.
-# Pierfrancesco Passerini <p.passerini@gmail.com>, 2021, 2022, 2023.
+# Pierfrancesco Passerini <p.passerini@gmail.com>, 2021, 2022, 2023, 2025.
 # Anto F <tempthings@outlook.it>, 2022.
 # Ereb0r <pierpaoloraz@gmail.com>, 2022.
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-25 20:36+1030\n"
-"PO-Revision-Date: 2023-01-19 18:50+0000\n"
+"PO-Revision-Date: 2025-06-27 16:39+0000\n"
 "Last-Translator: Pierfrancesco Passerini <p.passerini@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/it/>\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15.1\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Welcome"
 msgstr "Benvenuto"
@@ -60,11 +60,11 @@ msgstr "Indietro"
 msgid "Next >"
 msgstr "Avanti >"
 
-msgid "Please wait..."
-msgstr "Per favore attendi..."
+msgid "Please wait…"
+msgstr "Per favore attendi…"
 
-msgid "Identifying disk drives..."
-msgstr "Ricerca delle unità disco..."
+msgid "Identifying disk drives…"
+msgstr "Ricerca delle unità disco…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
@@ -269,6 +269,41 @@ msgstr "Dominio"
 msgid "Version"
 msgstr "Versione"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr "predefinito (negozia SMB2+ o superiore supportato da client e server)"
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr "1.0 (classico protocollo CIFS/SMBv1)"
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr "2.0 (introdotto in Vista SP1, Windows Server 2008)"
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr "2.1 (introdotto in Windows 7, Windows Server 2008R2)"
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr "3 (versione 3.0 o superiore del protocollo SMB)"
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr "3.0 (introdotto in Windows 8, Windows Server 2012)"
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr "3.0.2 (introdotto in Windows 8.1, Windows Server 2012R2)"
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr "3.1.1 (introdotto in Windows 10, Windows Server 2016)"
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+"Non specificato (prova NFS v4.2, poi negozia la versione con il server fino "
+"a trovarne una supportata)"
+
+msgid "NFSv3"
+msgstr "NFSv3"
+
+msgid "NFSv4"
+msgstr "NFSv4"
+
 msgid "Remote path"
 msgstr "Percorso remoto"
 
@@ -278,8 +313,8 @@ msgstr "Percorso esportato"
 msgid "Identity File"
 msgstr "Chiave SSH"
 
-msgid "Optional"
-msgstr "Facoltativo"
+msgid "Port"
+msgstr "Porta"
 
 msgid "Select network-shared storage location:"
 msgstr "Seleziona tipologia e percorso:"
@@ -290,8 +325,8 @@ msgstr "Seleziona la partizione in cui verranno salvati i file"
 msgid "Partition"
 msgstr "Partizione"
 
-msgid "Mounting..."
-msgstr "Montaggio..."
+msgid "Mounting…"
+msgstr "Montaggio…"
 
 msgid "Close this popup to cancel the mount operation."
 msgstr "Chiudi questa finestra per annullare l'operazione di montaggio."
@@ -304,8 +339,8 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr "Deve fornire una password od una chiave SSH."
 
-msgid "Scanning folder for backup images..."
-msgstr "Scansione cartella alla ricerca di immagini di backup..."
+msgid "Scanning folder for backup images…"
+msgstr "Scansione cartella alla ricerca di immagini di backup…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -391,8 +426,8 @@ msgstr ""
 "La seguente tabella elenca le immagini di backup già all'interno della "
 "cartella (se presenti)."
 
-msgid "Browse..."
-msgstr "Sfoglia..."
+msgid "Browse…"
+msgstr "Sfoglia…"
 
 msgid "Filename"
 msgstr "Nome del file"
@@ -611,9 +646,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Immagine selezionata"
 
-msgid "Destination device"
-msgstr "Dispositivo di destinazione"
-
 msgid "Destination partition"
 msgstr "Partizione di destinazione"
 
@@ -667,9 +699,9 @@ msgstr "Non ripristinare questa partizione"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "Quando sei pronto per continuare, clicca <b>Avanti</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
-"Scansione e smontaggio di qualsiasi volume di Logical Volume Manager (LVM)..."
+"Scansione e smontaggio di qualsiasi volume di Logical Volume Manager (LVM)…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -741,8 +773,8 @@ msgstr "Aggiornamento della tabella delle partizioni"
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr "Ripristino di {description} in {destination_partition} ({destination_description})"
 
-msgid "Synchronizing disks..."
-msgstr "Sincronizzazione dischi..."
+msgid "Synchronizing disks…"
+msgstr "Sincronizzazione dischi…"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -753,10 +785,10 @@ msgid "Probing {device} with {app}"
 msgstr "Esplorazione {device} con {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 "Espansione del file system {partition} ({filesystem}). Potrebbe richiedere "
-"del tempo..."
+"del tempo…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -799,8 +831,8 @@ msgstr "Aggiornamento initramfs (se presente)"
 msgid "Successfully updated initramfs"
 msgstr "Aggiornamento initramfs eseguito con successo"
 
-msgid "Updating EFI NVRAM..."
-msgstr "Aggiornamento della NVRAM EFI..."
+msgid "Updating EFI NVRAM…"
+msgstr "Aggiornamento della NVRAM EFI…"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "NVRAM EFI aggiornata con successo"
@@ -877,8 +909,8 @@ msgstr ""
 msgid "Mount"
 msgstr "Montare"
 
-msgid "Mounting as read-only..."
-msgstr "Montaggio in sola lettura..."
+msgid "Mounting as read-only…"
+msgstr "Montaggio in sola lettura…"
 
 msgid "Unmount"
 msgstr "Smontare"
@@ -894,7 +926,7 @@ msgstr "Apri in file manager"
 msgid "Verify"
 msgstr "Verifica"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "Seleziona una o più immagini da verificare."
 
 msgid "To begin verification, click <b>Next</b>."

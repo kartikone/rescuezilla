@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
-#   Copyright (C) 2003-2023 Steven Shiau <steven _at_ clonezilla org>
-#   Copyright (C) 2019-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2003-2025 Steven Shiau <steven _at_ clonezilla org>
+#   Copyright (C) 2019-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -25,21 +25,36 @@ class LvmTest(unittest.TestCase):
     def test_logical_volume_list_parsing(self):
         # Example contents of lvm_logv.list file
         lvm_logv_list_string = """/dev/vgtest/lvtest  Linux rev 1.0 ext4 filesystem data, UUID=b9131c40-9742-416c-b019-8b11481a86ac (extents) (64bit) (large files) (huge files)"""
-        logical_volume_dict = Lvm.parse_logical_volume_device_list_string(lvm_logv_list_string)
-        expected = {"/dev/vgtest/lvtest": {"metadata": "Linux rev 1.0 ext4 filesystem data, UUID=b9131c40-9742-416c-b019-8b11481a86ac (extents) (64bit) (large files) (huge files)"}}
+        logical_volume_dict = Lvm.parse_logical_volume_device_list_string(
+            lvm_logv_list_string
+        )
+        expected = {
+            "/dev/vgtest/lvtest": {
+                "metadata": "Linux rev 1.0 ext4 filesystem data, UUID=b9131c40-9742-416c-b019-8b11481a86ac (extents) (64bit) (large files) (huge files)"
+            }
+        }
         # pp = pprint.PrettyPrinter(indent=4)
         self.assertDictEqual(expected, logical_volume_dict)
 
     def test_volume_group_list_parsing(self):
         # Example contents of lvm_vg_dev.list
-        lvm_vg_dev_list_string = """vgtest /dev/sdb i20UTQ-OaX3-c6nB-CiBv-Gav1-hgVf-tEkO2W"""
-        volume_group_dict = Lvm.parse_volume_group_device_list_string(lvm_vg_dev_list_string)
-        expected = {"vgtest": {"device_node": "/dev/sdb", "uuid": "i20UTQ-OaX3-c6nB-CiBv-Gav1-hgVf-tEkO2W"}}
+        lvm_vg_dev_list_string = (
+            """vgtest /dev/sdb i20UTQ-OaX3-c6nB-CiBv-Gav1-hgVf-tEkO2W"""
+        )
+        volume_group_dict = Lvm.parse_volume_group_device_list_string(
+            lvm_vg_dev_list_string
+        )
+        expected = {
+            "vgtest": {
+                "device_node": "/dev/sdb",
+                "uuid": "i20UTQ-OaX3-c6nB-CiBv-Gav1-hgVf-tEkO2W",
+            }
+        }
         self.assertDictEqual(expected, volume_group_dict)
 
     def test_save_logv(self):
-        # sudo pvs -o pv_all,lv_all,vg_all --reportformat json
-        pvs_all_json_output = """  {
+        # For analysis, here is the output of: sudo pvs -o pv_all,lv_all,vg_all --reportformat json
+        _pvs_all_json_output = """  {
       "report": [
           {
               "pv": [
@@ -49,6 +64,7 @@ class LvmTest(unittest.TestCase):
       ]
   }
 """
+        # sudo pvs -o pv_all --reportformat json
         pvs_json_output = """  {
       "report": [
           {
@@ -58,7 +74,7 @@ class LvmTest(unittest.TestCase):
           }
       ]
   }"""
-        physical_volume_state_dict = json.loads(pvs_json_output)
+        _physical_volume_state_dict = json.loads(pvs_json_output)
 
         # sudo lvs -o lv_all --reportformat json
         lvs_json_output = """  {
@@ -71,7 +87,7 @@ class LvmTest(unittest.TestCase):
       ]
   }
 """
-        logical_volume_state_dict = json.loads(lvs_json_output)
+        _logical_volume_state_dict = json.loads(lvs_json_output)
 
         # sudo vgs -o vg_all --reportformat json
         vgs_json_output = """  {
@@ -84,4 +100,4 @@ class LvmTest(unittest.TestCase):
       ]
   }
 """
-        volume_group_state_dict = json.loads(vgs_json_output)
+        _volume_group_state_dict = json.loads(vgs_json_output)

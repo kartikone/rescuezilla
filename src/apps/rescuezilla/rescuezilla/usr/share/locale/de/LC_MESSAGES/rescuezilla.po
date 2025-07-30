@@ -63,10 +63,10 @@ msgstr "Zurück"
 msgid "Next >"
 msgstr "Weiter ▶"
 
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Bitte warten …"
 
-msgid "Identifying disk drives..."
+msgid "Identifying disk drives…"
 msgstr "Suche Laufwerke …"
 
 #, python-brace-format
@@ -279,6 +279,39 @@ msgstr "Domain"
 msgid "Version"
 msgstr "Version"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr "Entfernter Pfad"
 
@@ -288,8 +321,8 @@ msgstr "Exportierter Pfad"
 msgid "Identity File"
 msgstr "Ordner auswählen"
 
-msgid "Optional"
-msgstr "optional"
+msgid "Port"
+msgstr ""
 
 msgid "Select network-shared storage location:"
 msgstr "Speicherort mit Netzwerkfreigabe auswählen:"
@@ -300,8 +333,8 @@ msgstr "Ziellaufwerk auswählen"
 msgid "Partition"
 msgstr "Partition"
 
-msgid "Mounting..."
-msgstr "Einhängen ..."
+msgid "Mounting…"
+msgstr "Einhängen …"
 
 msgid "Close this popup to cancel the mount operation."
 msgstr "Schließe dieses Fenster um das Einhängen abzubrechen."
@@ -314,8 +347,8 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr "Passwort oder SSH Identitäts-Datei benötigt."
 
-msgid "Scanning folder for backup images..."
-msgstr "Ordner für Sicherungskopien wird gescannt ..."
+msgid "Scanning folder for backup images…"
+msgstr "Ordner für Sicherungskopien wird gescannt …"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -402,8 +435,8 @@ msgstr ""
 "In der folgenden Tabelle sind alle Sicherungskopien aufgeführt, die sich "
 "bereits in diesem Ordner befinden (sofern hier welche vorhanden sind)."
 
-msgid "Browse..."
-msgstr "Durchsuchen ..."
+msgid "Browse…"
+msgstr "Durchsuchen …"
 
 msgid "Filename"
 msgstr "Dateiname"
@@ -626,9 +659,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Ausgewählte Sicherungskopie"
 
-msgid "Destination device"
-msgstr "Ziellaufwerk"
-
 msgid "Destination partition"
 msgstr "Zielpartition"
 
@@ -681,8 +711,8 @@ msgstr "Diese Partition nicht wiederherstellen"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "Wenn du bereit bist fortzufahren, klicke <b>Weiter</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
-msgstr "Duchsuche und hänge Logical Volume Manager (LVM) aus ..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
+msgstr "Duchsuche und hänge Logical Volume Manager (LVM) aus …"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -758,8 +788,8 @@ msgstr "Partitionstabelle aktualisieren"
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr "{description} wird auf {destination_partition} ({destination_description}) wiederhergestellt"
 
-msgid "Synchronizing disks..."
-msgstr "Synchronisiere Laufwerke ..."
+msgid "Synchronizing disks…"
+msgstr "Synchronisiere Laufwerke …"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -770,10 +800,10 @@ msgid "Probing {device} with {app}"
 msgstr "Prüfe {device} mit {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 "Lege Dateisystem an {partition} ({filesystem}]. Dies kann eine Weile dauern "
-"..."
+"…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -814,8 +844,8 @@ msgstr "Aktualisiere initramfs (sofern vorhanden)"
 msgid "Successfully updated initramfs"
 msgstr "Aktualisierung von initramfs war erfolgreich"
 
-msgid "Updating EFI NVRAM..."
-msgstr "Aktualisiere EFI NVRAM ..."
+msgid "Updating EFI NVRAM…"
+msgstr "Aktualisiere EFI NVRAM …"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "Aktualisierung von EFI NVRAM war erfolgreich"
@@ -895,8 +925,8 @@ msgstr ""
 msgid "Mount"
 msgstr "Einhängen"
 
-msgid "Mounting as read-only..."
-msgstr "Hänge nur-lesend ein ..."
+msgid "Mounting as read-only…"
+msgstr "Hänge nur-lesend ein …"
 
 msgid "Unmount"
 msgstr "Aushängen"
@@ -912,7 +942,7 @@ msgstr "In Dateimanager öffnen"
 msgid "Verify"
 msgstr "Überprüfen"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "Wählen Sie ein oder mehrere zu überprüfende Images aus."
 
 msgid "To begin verification, click <b>Next</b>."

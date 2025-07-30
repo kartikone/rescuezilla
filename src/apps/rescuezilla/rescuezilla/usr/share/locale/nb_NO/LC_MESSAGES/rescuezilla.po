@@ -53,10 +53,10 @@ msgstr "Tilbake"
 msgid "Next >"
 msgstr "Neste >"
 
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr "Vennligst vent …"
 
-msgid "Identifying disk drives..."
+msgid "Identifying disk drives…"
 msgstr "Identifiserer diskenheter …"
 
 #, python-brace-format
@@ -259,6 +259,39 @@ msgstr "Domene"
 msgid "Version"
 msgstr "Versjon"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr "Fjern-sti"
 
@@ -268,8 +301,8 @@ msgstr "Eksportert sti"
 msgid "Identity File"
 msgstr "Identitetsfil"
 
-msgid "Optional"
-msgstr "Valgfritt"
+msgid "Port"
+msgstr ""
 
 msgid "Select network-shared storage location:"
 msgstr "Velg nettverksdelt lagringssted:"
@@ -280,7 +313,7 @@ msgstr "Velg partisjonen å lagre avbildningsfilene til"
 msgid "Partition"
 msgstr "Partisjon"
 
-msgid "Mounting..."
+msgid "Mounting…"
 msgstr "Monterer …"
 
 msgid "Close this popup to cancel the mount operation."
@@ -294,7 +327,7 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr "Enten passord eller SSH-identitetsfil må angis."
 
-msgid "Scanning folder for backup images..."
+msgid "Scanning folder for backup images…"
 msgstr "Skanner mappe for sikkerhetskopiavbildninger…"
 
 #, python-brace-format
@@ -385,7 +418,7 @@ msgstr ""
 "Tabellen nedenfor lister opp sikkerhetskopiavbildningene som allerede er i "
 "denne mappen (hvis noen)."
 
-msgid "Browse..."
+msgid "Browse…"
 msgstr "Bla gjennom…"
 
 msgid "Filename"
@@ -604,9 +637,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Valgt avbildning"
 
-msgid "Destination device"
-msgstr "Målenhet"
-
 msgid "Destination partition"
 msgstr "Målpartisjon"
 
@@ -657,8 +687,8 @@ msgstr "Gjenoppretter ikke denne partisjonen"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "Klikk <b>Neste</b> når du er klar til å fortsette."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
-msgstr "Skanner og avmonterer alle (LVM) logiske volumer..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
+msgstr "Skanner og avmonterer alle (LVM) logiske volumer…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -732,7 +762,7 @@ msgstr ""
 "Gjenoppretter {description} til {destination_partition} "
 "({destination_description})"
 
-msgid "Synchronizing disks..."
+msgid "Synchronizing disks…"
 msgstr "Synkroniserer disker …"
 
 #, fuzzy
@@ -746,7 +776,7 @@ msgstr "Undersøker {device} med {app}"
 
 #, fuzzy
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr "Utvider filsystemet {partition} ({filesystem}). Dette kan ta en stund …"
 
 #, python-brace-format
@@ -793,7 +823,7 @@ msgid "Successfully updated initramfs"
 msgstr "Oppdaterte initramfs"
 
 #, fuzzy
-msgid "Updating EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
 msgstr "Oppdaterer EFI NVRAM …"
 
 msgid "Successfully updated EFI NVRAM"
@@ -876,7 +906,7 @@ msgstr ""
 msgid "Mount"
 msgstr "Monter"
 
-msgid "Mounting as read-only..."
+msgid "Mounting as read-only…"
 msgstr "Monterer som skrivebeskyttet…"
 
 msgid "Unmount"
@@ -893,7 +923,7 @@ msgstr "Åpne i filbehandler"
 msgid "Verify"
 msgstr "Bekreft"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "Velg en eller flere avbildning(er) å bekrefte."
 
 msgid "To begin verification, click <b>Next</b>."

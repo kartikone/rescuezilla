@@ -5,13 +5,14 @@
 # МАН69К <weblate@mah69k.net>, 2022.
 # Languages add-on <noreply-addon-languages@weblate.org>, 2024.
 # Adrian <adriantnt@adriantnt.com>, 2024.
+# ac49724 <ac49724@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 00:00+0000\n"
-"PO-Revision-Date: 2024-11-27 01:00+0000\n"
-"Last-Translator: Adrian <adriantnt@adriantnt.com>\n"
+"PO-Revision-Date: 2025-04-03 18:12+0000\n"
+"Last-Translator: ac49724 <ac49724@gmail.com>\n"
 "Language-Team: Romanian <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/ro/>\n"
 "Language: ro\n"
@@ -20,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Weblate 5.9-dev\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Welcome"
 msgstr "Bun venit"
@@ -33,7 +34,6 @@ msgstr ""
 "Creaza cu usurinta o imagine backup a calculatorului tau, sau restaureaza "
 "dintr-o imagine. Click pe o optiune pentru a incepe:"
 
-#, fuzzy
 msgid "Backup"
 msgstr "Backup"
 
@@ -55,10 +55,10 @@ msgstr ""
 msgid "Next >"
 msgstr ""
 
-msgid "Please wait..."
+msgid "Please wait…"
 msgstr ""
 
-msgid "Identifying disk drives..."
+msgid "Identifying disk drives…"
 msgstr ""
 
 #, python-brace-format
@@ -235,6 +235,39 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr ""
 
@@ -244,7 +277,7 @@ msgstr ""
 msgid "Identity File"
 msgstr ""
 
-msgid "Optional"
+msgid "Port"
 msgstr ""
 
 msgid "Select network-shared storage location:"
@@ -256,7 +289,7 @@ msgstr ""
 msgid "Partition"
 msgstr ""
 
-msgid "Mounting..."
+msgid "Mounting…"
 msgstr ""
 
 msgid "Close this popup to cancel the mount operation."
@@ -268,7 +301,7 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr ""
 
-msgid "Scanning folder for backup images..."
+msgid "Scanning folder for backup images…"
 msgstr ""
 
 #, python-brace-format
@@ -334,7 +367,7 @@ msgstr ""
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr ""
 
-msgid "Browse..."
+msgid "Browse…"
 msgstr ""
 
 msgid "Filename"
@@ -376,7 +409,7 @@ msgid "default"
 msgstr ""
 
 msgid "zstandard"
-msgstr ""
+msgstr "zstandard"
 
 msgid "Uncompressed (Suitable for use with Image Explorer)"
 msgstr ""
@@ -532,9 +565,6 @@ msgstr ""
 msgid "Selected image"
 msgstr ""
 
-msgid "Destination device"
-msgstr ""
-
 msgid "Destination partition"
 msgstr ""
 
@@ -565,7 +595,7 @@ msgstr ""
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr ""
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
 
 #, python-brace-format
@@ -621,7 +651,7 @@ msgstr ""
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr ""
 
-msgid "Synchronizing disks..."
+msgid "Synchronizing disks…"
 msgstr ""
 
 #, python-brace-format
@@ -633,7 +663,7 @@ msgid "Probing {device} with {app}"
 msgstr ""
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 
 #, python-brace-format
@@ -672,7 +702,7 @@ msgstr ""
 msgid "Successfully updated initramfs"
 msgstr ""
 
-msgid "Updating EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
 msgstr ""
 
 msgid "Successfully updated EFI NVRAM"
@@ -739,7 +769,7 @@ msgstr ""
 msgid "Mount"
 msgstr ""
 
-msgid "Mounting as read-only..."
+msgid "Mounting as read-only…"
 msgstr ""
 
 msgid "Unmount"
@@ -754,7 +784,7 @@ msgstr ""
 msgid "Verify"
 msgstr ""
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr ""
 
 msgid "To begin verification, click <b>Next</b>."

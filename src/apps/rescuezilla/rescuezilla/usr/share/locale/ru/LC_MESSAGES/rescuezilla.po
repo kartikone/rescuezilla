@@ -3,22 +3,24 @@
 # Shasheen Ediriweera <shasheene@gmail.com>, 2021, 2022.
 # ttt113326 <tonio_k@mail.ru>, 2021.
 # МАН69К <weblate@mah69k.net>, 2022.
+# Simple16 <ini1995@gmail.com>, 2025.
+# ac49724 <ac49724@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 00:00+0000\n"
-"PO-Revision-Date: 2022-06-28 05:17+0000\n"
-"Last-Translator: Shasheen Ediriweera <shasheene@gmail.com>\n"
+"PO-Revision-Date: 2025-04-03 18:12+0000\n"
+"Last-Translator: ac49724 <ac49724@gmail.com>\n"
 "Language-Team: Russian <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/ru/>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.13.1-dev\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Weblate 5.11-dev\n"
 
 msgid "Welcome"
 msgstr "Добро пожаловать"
@@ -56,11 +58,11 @@ msgstr "Назад"
 msgid "Next >"
 msgstr "Далее >"
 
-msgid "Please wait..."
-msgstr "Пожалуйста, подождите..."
+msgid "Please wait…"
+msgstr "Пожалуйста, подождите…"
 
-msgid "Identifying disk drives..."
-msgstr "Определяем диски..."
+msgid "Identifying disk drives…"
+msgstr "Определяем диски…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
@@ -265,6 +267,39 @@ msgstr "Домен"
 msgid "Version"
 msgstr "Версия"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr "Удалённый путь"
 
@@ -274,8 +309,8 @@ msgstr "Экспортированный путь"
 msgid "Identity File"
 msgstr "Указанный файл"
 
-msgid "Optional"
-msgstr "Опционально"
+msgid "Port"
+msgstr ""
 
 msgid "Select network-shared storage location:"
 msgstr "Укажите путь сетевого хранилища:"
@@ -286,8 +321,8 @@ msgstr "Укажите раздел в котором будет хранить�
 msgid "Partition"
 msgstr "Раздел"
 
-msgid "Mounting..."
-msgstr "Монтирование..."
+msgid "Mounting…"
+msgstr "Монтирование…"
 
 msgid "Close this popup to cancel the mount operation."
 msgstr "Закройте это окно для отмены операции монтирования."
@@ -298,8 +333,8 @@ msgstr "Убедитесь что логин и пароль указаны ве
 msgid "Must provide either password or SSH identity file."
 msgstr "Необходимо указать пароль или файл SSH."
 
-msgid "Scanning folder for backup images..."
-msgstr "Поиск резервных образов..."
+msgid "Scanning folder for backup images…"
+msgstr "Поиск резервных образов…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -386,8 +421,8 @@ msgstr ""
 "В таблице ниже указаны резервные копии, которые уже находятся в этой папке ("
 "если есть)."
 
-msgid "Browse..."
-msgstr "Обзор..."
+msgid "Browse…"
+msgstr "Обзор…"
 
 msgid "Filename"
 msgstr "Название"
@@ -486,6 +521,8 @@ msgstr ""
 
 msgid "<b>Enabling \"Rescue\" may suppress important errors. Use with caution.</b>"
 msgstr ""
+"<b>Включение \"Rescue\" может скрыть важные ошибки. Используйте с "
+"осторожностью.</b>"
 
 msgid "To start the backup, click <b>Next</b>."
 msgstr "Для начала резервного копирования нажмите <b>Далее</b>."
@@ -525,7 +562,7 @@ msgid "Operation cancelled by user."
 msgstr "Операция отменена пользователем."
 
 msgid "Rescue option is enabled."
-msgstr ""
+msgstr "Включена опция восстановления."
 
 msgid "Error creating backup: "
 msgstr "Ошибка создания резервной копии: "
@@ -606,9 +643,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Выбранный образ"
 
-msgid "Destination device"
-msgstr "Целевое устройство"
-
 msgid "Destination partition"
 msgstr "Целевой раздел"
 
@@ -659,9 +693,9 @@ msgstr "Не восстанавливать данный раздел"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "Когда Вы будете готовы продолжить, нажмите <b>Далее</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
-"Поиск и размонтирование логических томов Менеджера Логических Томов (LVM)..."
+"Поиск и размонтирование логических томов Менеджера Логических Томов (LVM)…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -736,8 +770,8 @@ msgstr ""
 "Восстановление {description} в {destination_partition} "
 "({destination_description})"
 
-msgid "Synchronizing disks..."
-msgstr "Синхронизация дисков..."
+msgid "Synchronizing disks…"
+msgstr "Синхронизация дисков…"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -748,10 +782,10 @@ msgid "Probing {device} with {app}"
 msgstr "Исследование {device} с помощью {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 "Расширение файловой системы {partition} ({filesystem}). Это может занять "
-"время..."
+"время…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -791,8 +825,8 @@ msgstr "Обновление initramfs (если есть)"
 msgid "Successfully updated initramfs"
 msgstr "initramfs успешно обновлен"
 
-msgid "Updating EFI NVRAM..."
-msgstr "Обновление EFI NVRAM ..."
+msgid "Updating EFI NVRAM…"
+msgstr "Обновление EFI NVRAM …"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "EFI NVRAM успешно обновлен"
@@ -839,7 +873,7 @@ msgid "Restore Summary"
 msgstr "Сводка по восстановлению"
 
 msgid "Confirm the restore summary."
-msgstr "Подтвердите сводку по восстановлению"
+msgstr "Подтвердите сводку по восстановлению."
 
 msgid "Backup restored successfully."
 msgstr "Резервная копия успешно восстановлена."
@@ -870,8 +904,8 @@ msgstr ""
 msgid "Mount"
 msgstr "Смонтировать"
 
-msgid "Mounting as read-only..."
-msgstr "Монтирование в режиме \"только для чтения\"..."
+msgid "Mounting as read-only…"
+msgstr "Монтирование в режиме \"только для чтения\"…"
 
 msgid "Unmount"
 msgstr "Размонтировать"
@@ -887,33 +921,33 @@ msgstr "Открыть в Проводнике"
 msgid "Verify"
 msgstr "Проверить"
 
-msgid "Select one or more image(s) to verify."
-msgstr ""
+msgid "Select one or more images to verify."
+msgstr "Выберите одно или несколько образов для проверки."
 
 msgid "To begin verification, click <b>Next</b>."
-msgstr ""
+msgstr "Чтобы начать проверку, нажмите <b>Далее</b>."
 
 msgid "Verifying Image"
-msgstr ""
+msgstr "Проверка образа"
 
 msgid "Verifying the selected image(s)."
-msgstr ""
+msgstr "Проверка выбранного(ых) образа(ов)."
 
 #, python-brace-format
 msgid "Verifying {image_name}"
 msgstr "Проверка {image_name}"
 
 msgid "Summary of Verification"
-msgstr ""
+msgstr "Сводная информация о проверке"
 
 msgid "Confirm the verification summary."
-msgstr ""
+msgstr "Подтвердите сводку проверки."
 
 msgid "Verification Summary"
-msgstr ""
+msgstr "Сводная информация по проверке"
 
 msgid "To verify another image, click <b>Back</b>."
-msgstr ""
+msgstr "Чтобы проверить другой образ, нажмите <b>Назад</b>."
 
 msgid "✔"
 msgstr "✔"
@@ -922,20 +956,20 @@ msgid "❌"
 msgstr "❌"
 
 msgid "MBR backup appears correct."
-msgstr ""
+msgstr "Резервная копия MBR является корректной."
 
 msgid "No partition table found."
-msgstr ""
+msgstr "Таблица разделов не найдена."
 
 msgid "Sfdisk partition table file is empty or missing."
-msgstr ""
+msgstr "Файл таблицы разделов Sfdisk пуст или отсутствует."
 
 msgid "Sfdisk partition table file is present."
-msgstr ""
+msgstr "Файл таблицы разделов Sfdisk присутствует."
 
 msgid "Unable to verify."
-msgstr ""
+msgstr "Не удалось проверить."
 
 #, python-brace-format
 msgid "{partition}: filesystem image successfully verified."
-msgstr ""
+msgstr "{partition}: образ файловой системы успешно проверен."

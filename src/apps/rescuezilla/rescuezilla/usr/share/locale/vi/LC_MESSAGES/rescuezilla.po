@@ -3,13 +3,14 @@
 # Shasheen Ediriweera <shasheene@gmail.com>, 2021.
 # Long Nguyễn Khánh <khanhlong17112000@gmail.com>, 2021.
 # Thanh Le <lxthanhlph@gmail.com>, 2024.
+# Trung Nguyen <trungnth@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 00:00+0000\n"
-"PO-Revision-Date: 2024-11-16 21:00+0000\n"
-"Last-Translator: Thanh Le <lxthanhlph@gmail.com>\n"
+"PO-Revision-Date: 2025-05-09 03:02+0000\n"
+"Last-Translator: Trung Nguyen <trungnth@gmail.com>\n"
 "Language-Team: Vietnamese <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/vi/>\n"
 "Language: vi\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 5.9-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Welcome"
 msgstr "Chào mừng"
@@ -53,11 +54,11 @@ msgstr "Quay lại"
 msgid "Next >"
 msgstr "Tiếp theo >"
 
-msgid "Please wait..."
-msgstr "Đang chờ..."
+msgid "Please wait…"
+msgstr "Đang chờ…"
 
-msgid "Identifying disk drives..."
-msgstr "Đang nhận dạng các ổ đĩa..."
+msgid "Identifying disk drives…"
+msgstr "Đang nhận dạng các ổ đĩa…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
@@ -254,6 +255,39 @@ msgstr "Domain"
 msgid "Version"
 msgstr "Phiên bản"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr "Đường dẫn kết nối từ xa"
 
@@ -263,8 +297,8 @@ msgstr "Đường dẫn xuất"
 msgid "Identity File"
 msgstr "Tập tin nhận dạng"
 
-msgid "Optional"
-msgstr "Tùy chọn khác"
+msgid "Port"
+msgstr ""
 
 msgid "Select network-shared storage location:"
 msgstr "Chọn đường dẫn ổ lưu trữ chia sẻ mạng:"
@@ -275,8 +309,8 @@ msgstr "Chọn phân vùng để lưu bản sao lưu"
 msgid "Partition"
 msgstr "Phân vùng"
 
-msgid "Mounting..."
-msgstr "Đang kết nối..."
+msgid "Mounting…"
+msgstr "Đang kết nối…"
 
 msgid "Close this popup to cancel the mount operation."
 msgstr "Tắt cửa sổ này để hủy việc kết nối."
@@ -289,8 +323,8 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr "Phải nhập cả mật khẩu và tập tin nhận dạng SSH."
 
-msgid "Scanning folder for backup images..."
-msgstr "Đang quét các thư mục để sao lưu..."
+msgid "Scanning folder for backup images…"
+msgstr "Đang quét các thư mục để sao lưu…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -374,8 +408,8 @@ msgstr "Hãy chọn thư mục khác."
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr "Bảng dưới đây hiện danh sách các bản sao lưu có sẵn trong thư mục."
 
-msgid "Browse..."
-msgstr "Duyệt..."
+msgid "Browse…"
+msgstr "Duyệt…"
 
 msgid "Filename"
 msgstr "Tên file"
@@ -470,9 +504,12 @@ msgstr "Khởi động lại"
 
 msgid "Rescue: Ignore filesystem inconsistencies and bad sectors"
 msgstr ""
+"Cứu hộ: Bỏ qua sự không nhất quán của tập tin hệ thống và các sector xấu"
 
 msgid "<b>Enabling \"Rescue\" may suppress important errors. Use with caution.</b>"
 msgstr ""
+"<b>Bật \"Cứu hộ\" có thể làm các lỗi nghiêm trọng bị bỏ qua. Hãy sử dụng "
+"thận trọng.</b>"
 
 msgid "To start the backup, click <b>Next</b>."
 msgstr "Để bắt đầu sao lưu, nhấn <b>Tiếp theo</b>."
@@ -511,7 +548,7 @@ msgid "Operation cancelled by user."
 msgstr "Tiến trình bị hủy bởi người dùng."
 
 msgid "Rescue option is enabled."
-msgstr ""
+msgstr "Tùy chọn cứu hộ đã được bật."
 
 msgid "Error creating backup: "
 msgstr "Lỗi khi đang tạo bản sao lưu: "
@@ -586,9 +623,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Bản sao lưu đã chọn"
 
-msgid "Destination device"
-msgstr "Ổ đĩa đích"
-
 msgid "Destination partition"
 msgstr "Phân vùng đích"
 
@@ -638,8 +672,8 @@ msgstr "Không khôi phục phân vùng này"
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr "Nếu bạn đã sẵn sàng để tiếp tục, hãy nhấp vào <b>Tiếp theo</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
-msgstr "Quét và ngắt kết nối các ổ Logical Volume Manager (LVM)..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
+msgstr "Quét và ngắt kết nối các ổ Logical Volume Manager (LVM)…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -714,8 +748,8 @@ msgstr ""
 "Đang khôi phục {description} vào phân vùng {destination_partition} "
 "({destination_description})"
 
-msgid "Synchronizing disks..."
-msgstr "Đang đồng bộ hóa các ổ ..."
+msgid "Synchronizing disks…"
+msgstr "Đang đồng bộ hóa các ổ …"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -726,10 +760,10 @@ msgid "Probing {device} with {app}"
 msgstr "Kiểm tra ổ {device} với {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 "Đang phát triển hệ thống tập tin {partition} ({filesystem}). Việc này có thể "
-"mất một lúc..."
+"mất một lúc…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -771,8 +805,8 @@ msgstr "Cập nhật initramfs (nếu có)"
 msgid "Successfully updated initramfs"
 msgstr "Cập nhật initramfs thành công"
 
-msgid "Updating EFI NVRAM..."
-msgstr "Cập nhật EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
+msgstr "Cập nhật EFI NVRAM…"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "Đã cập nhật EFI NVRAM thành công"
@@ -851,8 +885,8 @@ msgstr "Nhấn <b>Kết nối</b> để gắn bản sao lưu (ở chế độ ch
 msgid "Mount"
 msgstr "Kết nối"
 
-msgid "Mounting as read-only..."
-msgstr "Kết nối ở chế độ chỉ đọc..."
+msgid "Mounting as read-only…"
+msgstr "Kết nối ở chế độ chỉ đọc…"
 
 msgid "Unmount"
 msgstr "Ngắt kết nối"
@@ -868,7 +902,7 @@ msgstr "Mở trong trình quản lý tệp"
 msgid "Verify"
 msgstr ""
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr ""
 
 msgid "To begin verification, click <b>Next</b>."

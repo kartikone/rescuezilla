@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
-#   Copyright (C) 2003-2023 Steven Shiau <steven _at_ clonezilla org>
-#   Copyright (C) 2021-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2003-2025 Steven Shiau <steven _at_ clonezilla org>
+#   Copyright (C) 2021-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 # ----------------------------------------------------------------------
 import utility
 
+
 # Port of Clonezilla's "dump_software_raid_info_if_exists" function
 class ProcMdstat:
     # Clonezilla's "dump_software_raid_info_if_exists" searches /proc/mdstat for active RAID volumes and
@@ -30,7 +31,7 @@ class ProcMdstat:
             m = utility.REMatcher(line)
             if m.match(r"Personalities : ([.*])"):
                 # TODO: Process further. If required
-                proc_mdstat_dict['personalities'] = m.group(1)
+                proc_mdstat_dict["personalities"] = m.group(1)
                 continue
             elif m.match(r"([a-zA-Z0-9]+) : active.*"):
                 md_device = m.group(1)

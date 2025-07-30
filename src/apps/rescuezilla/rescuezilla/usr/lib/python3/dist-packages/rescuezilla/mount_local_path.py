@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
 #   Copyright (C) 2012 RedoBackup.org
-#   Copyright (C) 2019-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2019-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -19,12 +19,12 @@ import os
 import threading
 import traceback
 
+from utility import PleaseWaitModalPopup, Utility, _
+
 import gi
 
 gi.require_version("Gtk", "3.0")
-from gi.repository import GLib
-
-from utility import PleaseWaitModalPopup, Utility, _
+from gi.repository import GLib  # noqa: E402
 
 
 class MountLocalPath:
@@ -38,9 +38,22 @@ class MountLocalPath:
         self.requested_stop_lock = threading.Lock()
         self.requested_stop = False
 
-        self.please_wait_popup = PleaseWaitModalPopup(builder, title=_("Please wait..."), message=_("Mounting...") + "\n\n" + _("Close this popup to cancel the mount operation."), on_close_callback=self.cancel_mount)
+        self.please_wait_popup = PleaseWaitModalPopup(
+            builder,
+            title=_("Please wait…"),
+            message=_("Mounting…")
+            + "\n\n"
+            + _("Close this popup to cancel the mount operation."),
+            on_close_callback=self.cancel_mount,
+        )
         self.please_wait_popup.show()
-        thread = threading.Thread(target=self._do_mount_command, args=(source_path, destination_path, ))
+        thread = threading.Thread(
+            target=self._do_mount_command,
+            args=(
+                source_path,
+                destination_path,
+            ),
+        )
         thread.daemon = True
         thread.start()
 
@@ -55,7 +68,9 @@ class MountLocalPath:
 
     def _do_mount_command(self, source_path, destination_path):
         try:
-            if not os.path.exists(destination_path) and not os.path.isdir(destination_path):
+            if not os.path.exists(destination_path) and not os.path.isdir(
+                destination_path
+            ):
                 os.mkdir(destination_path, 0o755)
 
             if self.is_stop_requested():
@@ -82,8 +97,13 @@ class MountLocalPath:
                 GLib.idle_add(self.callback, False, _("Operation cancelled by user."))
                 return
 
-            mount_cmd_list = ['mount', source_path, destination_path]
-            process, flat_command_string, failed_message = Utility.interruptable_run("Mounting selected partition: ", mount_cmd_list, use_c_locale=False, is_shutdown_fn=self.is_stop_requested)
+            mount_cmd_list = ["mount", source_path, destination_path]
+            process, flat_command_string, failed_message = Utility.interruptable_run(
+                "Mounting selected partition: ",
+                mount_cmd_list,
+                use_c_locale=False,
+                is_shutdown_fn=self.is_stop_requested,
+            )
             if process.returncode != 0:
                 GLib.idle_add(self.please_wait_popup.destroy)
                 GLib.idle_add(self.callback, False, failed_message)
@@ -91,7 +111,7 @@ class MountLocalPath:
             else:
                 GLib.idle_add(self.please_wait_popup.destroy)
                 GLib.idle_add(self.callback, True, "", destination_path)
-        except Exception as e:
+        except Exception:
             tb = traceback.format_exc()
             print(tb)
             GLib.idle_add(self.please_wait_popup.destroy)

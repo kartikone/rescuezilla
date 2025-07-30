@@ -57,11 +57,11 @@ msgstr "Kembali"
 msgid "Next >"
 msgstr "Lanjut >"
 
-msgid "Please wait..."
-msgstr "Harap tunggu..."
+msgid "Please wait…"
+msgstr "Harap tunggu…"
 
-msgid "Identifying disk drives..."
-msgstr "Mengidentifikasi disk drives..."
+msgid "Identifying disk drives…"
+msgstr "Mengidentifikasi disk drives…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
@@ -245,6 +245,39 @@ msgstr "Domain"
 msgid "Version"
 msgstr "Versi"
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr "Path jarak jauh"
 
@@ -254,8 +287,8 @@ msgstr "Path yang diekspor"
 msgid "Identity File"
 msgstr "Berkas Identitas"
 
-msgid "Optional"
-msgstr "Opsional"
+msgid "Port"
+msgstr ""
 
 msgid "Select network-shared storage location:"
 msgstr "Pilih lokasi penyimpanan jaringan-bersama:"
@@ -266,7 +299,7 @@ msgstr "Pilih partisi tempat file image akan disimpan"
 msgid "Partition"
 msgstr "Partisi"
 
-msgid "Mounting..."
+msgid "Mounting…"
 msgstr ""
 
 msgid "Close this popup to cancel the mount operation."
@@ -280,8 +313,8 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr "Harus memberikan kata sandi atau file identitas SSH."
 
-msgid "Scanning folder for backup images..."
-msgstr "Memindai folder untuk image cadangan..."
+msgid "Scanning folder for backup images…"
+msgstr "Memindai folder untuk image cadangan…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
@@ -351,8 +384,8 @@ msgstr "Pilih folder lain."
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr ""
 
-msgid "Browse..."
-msgstr "Jelajahi..."
+msgid "Browse…"
+msgstr "Jelajahi…"
 
 msgid "Filename"
 msgstr "Nama berkas"
@@ -549,9 +582,6 @@ msgstr ""
 msgid "Selected image"
 msgstr ""
 
-msgid "Destination device"
-msgstr ""
-
 msgid "Destination partition"
 msgstr ""
 
@@ -582,7 +612,7 @@ msgstr ""
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr ""
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
 
 #, python-brace-format
@@ -638,7 +668,7 @@ msgstr ""
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr ""
 
-msgid "Synchronizing disks..."
+msgid "Synchronizing disks…"
 msgstr ""
 
 #, python-brace-format
@@ -650,7 +680,7 @@ msgid "Probing {device} with {app}"
 msgstr ""
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 
 #, python-brace-format
@@ -689,8 +719,8 @@ msgstr ""
 msgid "Successfully updated initramfs"
 msgstr "Berhasil memperbarui initramfs"
 
-msgid "Updating EFI NVRAM..."
-msgstr "Memperbarui EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
+msgstr "Memperbarui EFI NVRAM…"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "Berhasil memperbarui EFI NVRAM"
@@ -759,8 +789,8 @@ msgstr "Klik <b>Mount</b> untuk memasang gambar cadangan (sebagai read-only)."
 msgid "Mount"
 msgstr "Muat"
 
-msgid "Mounting as read-only..."
-msgstr "Memasang sebagai read-only..."
+msgid "Mounting as read-only…"
+msgstr "Memasang sebagai read-only…"
 
 msgid "Unmount"
 msgstr "Lepas"
@@ -776,7 +806,7 @@ msgstr "Buka di manajer file"
 msgid "Verify"
 msgstr ""
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr ""
 
 msgid "To begin verification, click <b>Next</b>."

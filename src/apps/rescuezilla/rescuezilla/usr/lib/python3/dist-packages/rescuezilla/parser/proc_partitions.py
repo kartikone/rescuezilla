@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
-#   Copyright (C) 2003-2023 Steven Shiau <steven _at_ clonezilla org>
-#   Copyright (C) 2019-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2003-2025 Steven Shiau <steven _at_ clonezilla org>
+#   Copyright (C) 2019-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 # ----------------------------------------------------------------------
 import utility
 
+
 class ProcPartitions:
     # Clonezila's "wait_for_part_table_take_effect" polls `$(grep -Ew "${dsk_}p*[[:digit:]]+" /proc/partitions)`
     # for 50 times (once every 0.2 seconds), until the output of that command is non-zero (ie "sda1" or "nvme0n1p1")
@@ -24,7 +25,9 @@ class ProcPartitions:
     #
     # This function intends to achieve a similar outcome. See unit test for example cases.
     @staticmethod
-    def are_partitions_listed_in_proc_partitions(proc_partitions_string, short_device_node):
+    def are_partitions_listed_in_proc_partitions(
+        proc_partitions_string, short_device_node
+    ):
         for line in proc_partitions_string.splitlines():
             m = utility.REMatcher(line)
             if m.match(r".*" + short_device_node + r"[p]+[0-9]+$"):

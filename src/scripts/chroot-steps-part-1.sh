@@ -94,6 +94,7 @@ pkgs_specific_to_ubuntu2004_focal=("linux-generic-hwe-18.04"
                        "xserver-xorg-video-all-hwe-18.04"
                        "xserver-xorg-video-intel-hwe-18.04"
                        "xserver-xorg-video-qxl-hwe-18.04"
+                       "xserver-xorg-input-libinput"
                        # Packages which may assist users needing to do a GRUB repair (64-bit EFI)
                        "shim-signed"
                        "grub-efi-amd64-signed"
@@ -120,6 +121,7 @@ pkgs_specific_to_ubuntu2204_jammy=(
                        "xserver-xorg-video-intel"
                        "xserver-xorg-video-qxl"
                        "xserver-xorg-video-mga"
+                       "xserver-xorg-input-libinput"
                         # Packages which may assist users needing to do a GRUB repair (64-bit EFI)
                        "shim-signed"
                        "grub-efi-amd64-signed"
@@ -145,6 +147,7 @@ pkgs_specific_to_ubuntu2410_oracular=(
                        #"xserver-xorg-video-intel"
                        "xserver-xorg-video-qxl"
                        "xserver-xorg-video-mga"
+                       "xserver-xorg-input-libinput"
                         # Packages which may assist users needing to do a GRUB repair (64-bit EFI)
                        "shim-signed"
                        #"grub-efi-amd64-signed"
@@ -159,17 +162,21 @@ pkgs_specific_to_ubuntu2410_oracular=(
                        # Add support for crypto volumes mount (luks, bitlocker, crypt)
                        "libblockdev-crypto3"
                        # "Legacy "local authority" (.pkla) backend for polkitd" required so polkit works on Mantic
+                       # FIXME: Can probably remove with the recent introduction of new Javascript-based rules file
                        "polkitd-pkla"
                        "ibus-anthy"
+                       # Needed for 'hwclock' package used by "rc-local.service", moved from base "util-linux" since Ubuntu 23.10 (Mantic)
+                       "util-linux-extra"
 )
 
-pkgs_specific_to_ubuntu2404_noble=(
+pkgs_specific_to_ubuntu2504_plucky=(
                        "linux-generic"
                        "xserver-xorg"
                        "xserver-xorg-video-all"
                        "xserver-xorg-video-intel"
                        "xserver-xorg-video-qxl"
                        "xserver-xorg-video-mga"
+                       "xserver-xorg-input-libinput"
                         # Packages which may assist users needing to do a GRUB repair (64-bit EFI)
                        "shim-signed"
                        "grub-efi-amd64-signed"
@@ -182,9 +189,39 @@ pkgs_specific_to_ubuntu2404_noble=(
                        # Add support for crypto volumes mount (luks, bitlocker, crypt)
                        "libblockdev-crypto3"
                        # "Legacy "local authority" (.pkla) backend for polkitd" required so polkit works on Mantic
+                       #"polkitd-pkla"
+                       "ibus-anthy"
+                       # Needed for 'hwclock' package used by "rc-local.service", moved from base "util-linux" since Ubuntu 23.10 (Mantic)
+                       "util-linux-extra"
+)
+
+
+pkgs_specific_to_ubuntu2404_noble=(
+                       "linux-generic"
+                       "xserver-xorg"
+                       "xserver-xorg-video-all"
+                       "xserver-xorg-video-intel"
+                       "xserver-xorg-video-qxl"
+                       "xserver-xorg-video-mga"
+                       "xserver-xorg-input-libinput"
+                        # Packages which may assist users needing to do a GRUB repair (64-bit EFI)
+                       "shim-signed"
+                       "grub-efi-amd64-signed"
+                       "grub-efi-amd64-bin"
+                       "grub-efi-ia32-bin"
+                       # Dependency for Rescuezilla Image Explorer
+                       "nbdkit"
+                       # Replaces exfat-utils
+                       "exfatprogs"
+                       # Add support for crypto volumes mount (luks, bitlocker, crypt)
+                       "libblockdev-crypto3"
+                       # "Legacy "local authority" (.pkla) backend for polkitd" required so polkit works on Mantic
+                       # FIXME: Can probably remove with the recent introduction of new Javascript-based rules file
                        "polkitd-pkla"
                        "reiser4progs"
                        "python3-whichcraft"
+                       # Needed for 'hwclock' package used by "rc-local.service", moved from base "util-linux" since Ubuntu 23.10 (Mantic)
+                       "util-linux-extra"
 )
 
 # Languages on the system
@@ -195,7 +232,6 @@ lang_codes=(
              "da"
              "de"
              "el"
-             "es"
              "fa"
              "fi"
              "ta"
@@ -208,20 +244,33 @@ lang_codes=(
              "hu"
              "nl"
              "ja"
-             "nb"
              "pl"
-             "pt"
              "ro"
              "ru"
              "sk"
              "sq"
-             "sv"
              "th"
              "tr"
              "uk"
              "vi"
+)
+
+lang_codes_g=(
+             "es"
+             "nb"
+             "pt"
+             "sv"
              "zh-hans"
              "zh-hant"
+)
+
+lang_codes_f=(
+             "es-es"
+             "nb-no"
+             "pt-br"
+             "sv-se"
+             "zh-cn"
+             "zh-tw"
 )
 
 # Prepare list of language packs to install
@@ -229,8 +278,18 @@ language_pack_gnome_base_pkgs=()
 firefox_locale_pkgs=()
 for lang in "${lang_codes[@]}"
 do
-     firefox_locale_pkgs+=("firefox-locale-$lang")
+     firefox_locale_pkgs+=("firefox-l10n-$lang")
      language_pack_gnome_base_pkg+=("language-pack-gnome-$lang-base")
+done
+
+for lang in "${lang_codes_g[@]}"
+do
+     language_pack_gnome_base_pkg+=("language-pack-gnome-$lang-base")
+done
+
+for lang in "${lang_codes_f[@]}"
+do
+     firefox_locale_pkgs+=("firefox-l10n-$lang")
 done
 
 # Packages common to both  32-bit and 64-bit build
@@ -268,7 +327,7 @@ common_pkgs=("discover"
              "fonts-taml"
              # Font for symbols like "❌"
              "fonts-symbola"
-             "breeze-gtk-theme"
+             "arc-theme"
              "gnome-icon-theme"
              "gnome-brave-icon-theme"
              "dmz-cursor-theme"
@@ -287,7 +346,6 @@ common_pkgs=("discover"
              "time"
              "psmisc"
              "openssh-client"
-             "gtk2-engines-pixbuf"
              "beep"
              "rsync"
              "smartmontools"
@@ -338,6 +396,7 @@ common_pkgs=("discover"
              "lxappearance"
              "flashrom"
              "hashdeep"
+             "zstd"
 )
 
 # Install openssh-server only if the IS_INTEGRATION_TEST variable is enable
@@ -353,6 +412,8 @@ elif  [ "$CODENAME" == "jammy" ]; then
   apt_pkg_list=("${pkgs_specific_to_ubuntu2204_jammy[@]}" "${common_pkgs[@]}")
 elif  [ "$CODENAME" == "oracular" ]; then
   apt_pkg_list=("${pkgs_specific_to_ubuntu2410_oracular[@]}" "${common_pkgs[@]}")
+elif  [ "$CODENAME" == "plucky" ]; then
+  apt_pkg_list=("${pkgs_specific_to_ubuntu2504_plucky[@]}" "${common_pkgs[@]}")
 elif  [ "$CODENAME" == "noble" ]; then
   apt_pkg_list=("${pkgs_specific_to_ubuntu2404_noble[@]}" "${common_pkgs[@]}")
 else

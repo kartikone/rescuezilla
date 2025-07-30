@@ -1,6 +1,6 @@
 # ----------------------------------------------------------------------
 #   Copyright (C) 2012 RedoBackup.org
-#   Copyright (C) 2019-2023 Rescuezilla.com <rescuezilla@gmail.com>
+#   Copyright (C) 2019-2025 Rescuezilla.com <rescuezilla@gmail.com>
 # ----------------------------------------------------------------------
 #   This program is free software: you can redistribute it and/or modify
 #   it under the terms of the GNU General Public License as published by
@@ -27,7 +27,25 @@ class OsProberTest(unittest.TestCase):
 /dev/sdd1:Debian GNU/Linux 10 (buster):Debian:linux"""
         osprober_dict = OsProber.parse_os_prober_output(os_prober_contents)
         print("Actual osprober dict is " + str(osprober_dict))
-        expected_osprober_dict = collections.OrderedDict([
-            ('/dev/sdc2', {'os_description': 'Windows Boot Manager',  'os_label': 'Windows', 'os_type': 'efi', 'efi_bootloader_path': "/efi/Microsoft/Boot/bootmgfw.efi"}),
-            ('/dev/sdd1', {'os_description':  'Debian GNU/Linux 10 (buster)', 'os_label': 'Debian', 'os_type': 'linux'})])
+        expected_osprober_dict = collections.OrderedDict(
+            [
+                (
+                    "/dev/sdc2",
+                    {
+                        "os_description": "Windows Boot Manager",
+                        "os_label": "Windows",
+                        "os_type": "efi",
+                        "efi_bootloader_path": "/efi/Microsoft/Boot/bootmgfw.efi",
+                    },
+                ),
+                (
+                    "/dev/sdd1",
+                    {
+                        "os_description": "Debian GNU/Linux 10 (buster)",
+                        "os_label": "Debian",
+                        "os_type": "linux",
+                    },
+                ),
+            ]
+        )
         self.assertDictEqual(expected_osprober_dict, osprober_dict)

@@ -7,14 +7,15 @@
 # Shasheen Ediriweera <shasheene@gmail.com>, 2022, 2024.
 # Alexandre Hideki Watanabe <hidekiw@gmail.com>, 2023.
 # Bruno Batista <brucb879@gmail.com>, 2023.
-# Hugo Carvalho <hugokarvalho@hotmail.com>, 2023, 2024.
+# Hugo Carvalho <hugokarvalho@hotmail.com>, 2023, 2024, 2025.
+# Manuela Silva <mmsrs@sky.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-10-25 20:36+1030\n"
-"PO-Revision-Date: 2024-07-15 03:33+0000\n"
-"Last-Translator: Shasheen Ediriweera <shasheene@gmail.com>\n"
+"PO-Revision-Date: 2025-07-19 23:03+0000\n"
+"Last-Translator: Hugo Carvalho <hugokarvalho@hotmail.com>\n"
 "Language-Team: Portuguese <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/pt/>\n"
 "Language: pt\n"
@@ -22,7 +23,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.7-dev\n"
+"X-Generator: Weblate 5.13-dev\n"
 
 msgid "Welcome"
 msgstr "Bem-vindo"
@@ -31,10 +32,12 @@ msgid "Select an Option"
 msgstr "Selecione uma opção"
 
 msgid "Easily create a backup image of your computer, or completely restore from one.  Click an option to begin:"
-msgstr "Crie facilmente uma imagem de backup do seu computador ou restaure-a completamente. Clique em uma opção para começar:"
+msgstr ""
+"Crie facilmente uma imagem de cópia de segurança do seu computador ou "
+"restaure completamente a partir de uma.  Clique numa opção para começar:"
 
 msgid "Backup"
-msgstr "Backup"
+msgstr "Cópia de segurança"
 
 msgid "Restore"
 msgstr "Restaurar"
@@ -44,12 +47,12 @@ msgstr "Verificar Imagem"
 
 msgid "Need help? Start by checking the Rescuezilla frequently asked questions, then proceed to the Rescuezilla forum."
 msgstr ""
-"Precisa de ajuda? Comece verificando as perguntas mais frequentes do "
-"Rescuezilla e, em seguida, vá para o fórum do Rescuezilla."
+"Precisa de ajuda? Comece por consultar as perguntas mais frequentes do "
+"Rescuezilla e depois vá para o fórum do Rescuezilla."
 
 msgid "Consider contributing $1/month on the crowdfunding website Patreon so Rescuezilla can continue to be developed."
 msgstr ""
-"Considere contribuir com o valor simbólico de $1 Dólar ao mês no site de "
+"Considere contribuir com o valor simbólico de $1 Dólar ao mês no website de "
 "crowdfunding Patreon para que o Rescuezilla possa continuar a ser "
 "desenvolvido."
 
@@ -57,35 +60,35 @@ msgid "Back"
 msgstr "Voltar"
 
 msgid "Next >"
-msgstr "Próximo >"
+msgstr "Seguinte >"
 
-msgid "Please wait..."
-msgstr "Por favor espere..."
+msgid "Please wait…"
+msgstr "Por favor aguarde…"
 
-msgid "Identifying disk drives..."
-msgstr "Identificando drives de disco ..."
+msgid "Identifying disk drives…"
+msgstr "A identificar unidades de disco…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
-msgstr "Desmontando: {path}"
+msgstr "A desmontar: {path}"
 
 #, python-brace-format
 msgid "Unable to unmount {path}"
-msgstr "Impossível montar {path}"
+msgstr "Não foi possível desmontar {path}"
 
 #, python-brace-format
 msgid "Running: {app}"
-msgstr "Executando: {app}"
+msgstr "A executar: {app}"
 
 #, python-brace-format
 msgid "Running {app} on {device}"
-msgstr "Executando {app} no {device}"
+msgstr "A executar {app} no {device}"
 
 msgid "Failed to run command: "
 msgstr "Falha ao executar comandos: "
 
 msgid "Error querying drives: "
-msgstr "Erro requisitando drives: "
+msgstr "Erro ao consultar as unidades: "
 
 msgid "Clone"
 msgstr "Clonar"
@@ -103,42 +106,42 @@ msgid "This mode is for \"disk cloning\". Cloning means copying one drive and di
 ""
 "To use the \"imaging\" wizards, click <b>Back</b> and select <b>Backup</b> or <b>Restore</b>."
 msgstr ""
-"Este modo é para \"clonagem de disco\". Clonagem significa clonar um drive e "
-"de imediato escrever em outro driver. Isto é uma cópia direta de apenas um-"
-"passo, sem necessitar armazenamento termporário.\n"
+"Este modo é para \"clonagem de disco\". Clonagem significa clonar uma "
+"unidade e de imediato gravar noutra unidade. Isto é uma cópia direta de "
+"apenas um passo, sem necessitar armazenamento temporário.\n"
 "\n"
 "Clonar é diferente de \"imagem de disco\". Imagem significa copiar tudo de "
-"um drive em varios arquivos grandes armazenados em um drive externo. "
-"Multiplas imagens podem ser salvas em um drive externo (como um hd portátil)"
-". Essas imagens podem ser restauradas para o drive original, ou em drives "
-"adicionais. Em outras palavras, para \"imagem de disco\" como o nome já diz "
-"a operação de backup copia seu drive para <i>arquivos</i> que precisam ser "
-"salvas em um drive ao menos temporariamente até ser restaurado em outro "
-"local.\n"
+"uma unidade em vários ficheiros grandes armazenados numa unidade externa. "
+"Várias imagens podem ser armazenadas numa unidade externa (como um disco "
+"portátil). Estas imagens podem ser restauradas para a unidade original, ou "
+"em unidades adicionais. Por outras palavras, para \"imagem de disco\" como o "
+"nome já diz a operação de cópia de segurança copia a sua unidade para "
+"<i>ficheiros</i> que precisam de ser armazenadas numa unidade ao menos "
+"temporariamente até ser restaurado noutro local.\n"
 "\n"
-"Para usar wizard de \"imagem de disco\", clique <b>Voltar</b> e selecione "
-"<b>Backup</b> ou <b>Restaurar</b>."
+"Para usar assistentes de \"imagem de disco\", clique <b>Voltar</b> e "
+"selecione <b>Cópia de segurança</b> ou <b>Restaurar</b>."
 
 msgid "To begin the \"cloning\" wizard, click <b>Next</b>"
-msgstr "Para começar o guia de \"clonagem\", clique em <b>Próximo</b>"
+msgstr "Para começar o assistente de \"clonagem\", clique em <b>Seguinte</b>"
 
 msgid "Step 2: Select Source Drive"
-msgstr "Passo 2: Selecione o drive de origem"
+msgstr "Passo 2: Selecione a unidade de origem"
 
 msgid "Select the <b>source drive</b> to clone."
-msgstr "Selecione o <b>drive origem</b> para clonar."
+msgstr "Selecione a <b>unidade de origem</b> para clonar."
 
 msgid "Select the <b>destination drive</b> to overwrite."
-msgstr "Selecione o <b>drive de destino</b> para sobrescrever."
+msgstr "Selecione a <b>unidade de destino</b> para substituir."
 
 msgid "Step 4: Select Partitions to Clone"
 msgstr "Passo 4: Selecione Partições para Clonar"
 
 msgid "Select which partitions from the source drive to clone, and whether to overwrite the partition table. <b>Leave everything selected to completely clone the source drive to the destination drive.</b>"
 msgstr ""
-"Selecione quais partições do drive de origem clonar, e em qual tabela de "
-"partição será sobrescrito. <b>Deixe todos selecionado para clonar o drive de "
-"origem completamente para o drive de destino.</b>"
+"Selecione quais partições da unidade de origem clonar, e em qual tabela de "
+"partição será sobrescrito. <b>Deixe todos selecionado para clonar o unidade "
+"de origem completamente para o unidade de destino.</b>"
 
 msgid "Step 5: Confirm Cloning Configuration"
 msgstr "Passo 5: Confirme a Configuração de Clonagem"
@@ -150,22 +153,21 @@ msgid "Cloning the following partitions"
 msgstr "Clonando as seguintes partições"
 
 msgid "To start cloning, click <b>Next</b>."
-msgstr "Para iniciar a clonagem, clique em <b>Próximo</b>."
+msgstr "Para iniciar a clonagem, clique em <b>Seguinte</b>."
 
 #, python-brace-format
 msgid "Are you sure you want to clone the drive to {destination_drive}? Doing so will permanently overwrite data on this drive!"
 msgstr ""
-"Você tem certeza que quer clonar o drive para o drive {destination_drive} ? "
-"Fazendo isso você irá sobrepor permanentemente todos os dados do drive de "
-"destino!"
+"Tem a certeza que pretende clonar a unidade para {destination_drive} ? Ao "
+"fazer isto irá sobrepor permanentemente todos os dados do unidade de destino!"
 
 msgid "Step 6: Cloning Disk"
 msgstr "Passo 6: Clonar o disco"
 
 msgid "Cloning the drive you selected.  This may take an hour or more depending on the speed of your computer and the amount of data."
 msgstr ""
-"Clonar o disco selecionado. Isso pode demorar uma hora ou mais dependendo da "
-"velocidade do seu computador e da quantidade de dados."
+"A clonar a unidade selecionada. Isso pode demorar uma hora ou mais "
+"dependendo da velocidade do seu computador e da quantidade de dados."
 
 msgid "Summary of Clone"
 msgstr "Resumo da clonagem"
@@ -180,21 +182,21 @@ msgid "Unable to shutdown Image Explorer"
 msgstr "Não foi possível fechar o Image Explorer"
 
 msgid "Step 1: Select Drive To Backup"
-msgstr "Passo 1: Selecionar Drive para Backup"
+msgstr "Passo 1: Selecionar unidade para efetuar cópia de segurança"
 
 msgid "Select the <b>source drive</b> that you would like to create a backup image from."
 msgstr ""
-"Selecione a <b>unidade de origem</b> da qual você gostaria de criar uma "
-"imagem de backup."
+"Selecione a <b>unidade de origem</b> da qual gostaria de criar uma imagem de "
+"cópia de segurança."
 
 msgid "Drive"
-msgstr "Drive"
+msgstr "Unidade"
 
 msgid "Capacity"
 msgstr "Capacidade"
 
 msgid "Drive Model"
-msgstr "Modelo do Drive"
+msgstr "Modelo do Unidade"
 
 msgid "Serial Number"
 msgstr "Número de série"
@@ -203,35 +205,37 @@ msgid "Partitions"
 msgstr "Partições"
 
 msgid "Show hidden devices (for advanced users)"
-msgstr "Mostrar dispositivos ocultos (para usuários avançados)"
+msgstr "Mostrar dispositivos ocultos (para utilizadores avançados)"
 
 msgid "Step 2: Select Partitions to Save"
-msgstr "Passo 2: Selecione Partições para Salvar"
+msgstr "Passo 2: Selecionar partições para guardar"
 
 msgid "Select which partitions to create a backup of. <b>Leave all partitions selected if you are unsure.</b>"
 msgstr ""
-"Selecione de quais partições criar um backup. <b>Deixe todas as partições "
-"selecionadas se não tiver certeza.</b>"
+"Selecione de quais partições criar uma cópia de segurança. <b>Deixe todas as "
+"partições selecionadas se não tiver a certeza.</b>"
 
 msgid "Save"
-msgstr "Salvar"
+msgstr "Guardar"
 
 msgid "Description"
 msgstr "Descrição"
 
 #, python-brace-format
 msgid "Drive {drive_number}"
-msgstr "Drive {drive_number}"
+msgstr "Unidade {drive_number}"
 
 #, python-brace-format
 msgid "Partition {partition_number}"
 msgstr "Partição {partition_number}"
 
 msgid "Step 3: Select Destination Drive"
-msgstr "Passo 3: Selecione o Drive de Destino"
+msgstr "Passo 3: Selecione o unidade de destino"
 
 msgid "Click on the box below to select the source drive that you would like to create a backup image from."
-msgstr "Clique na caixa abaixo para selecionar o drive de origem do qual deseja criar uma imagem de backup."
+msgstr ""
+"Clique na caixa abaixo para selecionar a unidade de origem do qual deseja "
+"criar uma imagem de cópia de segurança."
 
 msgid "Connected directly to my computer"
 msgstr "Conectado diretamente ao meu computador"
@@ -255,16 +259,52 @@ msgid "Share location (UNC path)"
 msgstr "Partilhar localização (caminho UNC)"
 
 msgid "Username"
-msgstr "Nome de Usuário"
+msgstr "Nome de utilizador"
 
 msgid "Password"
-msgstr "Senha"
+msgstr "Palavra-passe"
 
 msgid "Domain"
 msgstr "Domínio"
 
 msgid "Version"
 msgstr "Versão"
+
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+"predefinição (Negociar mais alto SMB2+ suportado pelo cliente e servidor)"
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr "1.0 (O protocolo clássico CIFS/SMBv1)"
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr "2.0 (Introduzido no Vista SP1, Windows Server 2008)"
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr "2.1 (Introduzido no Windows 7, Windows Server 2008R2)"
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr "3 (A versão do protocolo SMBv3.0 e superior)"
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr "3.0 (Introduzido no Windows 8, Windows Server 2012)"
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr "3.0.2 (Introduzido no Windows 8.1, Windows Server 2012R2)"
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr "3.1.1 (Introduzido no Windows 10, Windows Server 2016)"
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+"Não especificado (Tente primeiro NFS v4.2 e depois negocie com o servidor "
+"até encontrar uma versão suportada)"
+
+msgid "NFSv3"
+msgstr "NFSv3"
+
+msgid "NFSv4"
+msgstr "NFSv4"
 
 msgid "Remote path"
 msgstr "Caminho remoto"
@@ -273,92 +313,101 @@ msgid "Exported path"
 msgstr "Caminho exportado"
 
 msgid "Identity File"
-msgstr "Arquivo de identificação"
+msgstr "Ficheiro de Identidade"
 
-msgid "Optional"
-msgstr "Opcional"
+msgid "Port"
+msgstr "Porta"
 
 msgid "Select network-shared storage location:"
-msgstr "Selecione o local de armazenamento compartilhado na rede :"
+msgstr "Selecione o local de armazenamento partilhado na rede:"
 
 msgid "Select the partition where the image files will be saved to"
-msgstr "Selecione a partição onde os arquivos de imagem serão salvos"
+msgstr "Selecione a partição onde os ficheiros de imagem serão guardados"
 
 msgid "Partition"
 msgstr "Partição"
 
-msgid "Mounting..."
-msgstr "Montando..."
+msgid "Mounting…"
+msgstr "A montar…"
 
 msgid "Close this popup to cancel the mount operation."
-msgstr "Feche essa janela para cancelar a operação de montagem."
+msgstr "Feche esta janela para cancelar a operação de montagem."
 
 msgid "Please ensure the username, password and other fields provided are correct, and try again."
-msgstr "Certifique-se de que o nome de usuário, senha e outros campos fornecidos estão corretos e tente novamente."
+msgstr ""
+"Por favor, certifique-se que o nome de utilizador, palavra-passe e os outros "
+"campos fornecidos estão corretos, e tente novamente."
 
 msgid "Must provide either password or SSH identity file."
-msgstr "Precisa informar senha ou arquivo de identidade SSH."
+msgstr "Deve fornecer a palavra-passe ou o ficheiro de identidade SSH."
 
-msgid "Scanning folder for backup images..."
-msgstr "Escaneando pasta por imagens de backup ..."
+msgid "Scanning folder for backup images…"
+msgstr "A pesquisar a pasta por imagens de cópia de segurança…"
 
 #, python-brace-format
 msgid "({timeout_seconds} second timeout)"
-msgstr "({timeout_seconds} segundos para finalizar)"
+msgstr "({timeout_seconds} segundos para terminar)"
 
 msgid "Close this popup to cancel scanning the selected folder and subfolders."
 msgstr ""
-"Feche essa janela para cancelar a varredura das pastas e subpastas "
+"Feche esta janela para cancelar a pesquisa das pastas e subpastas "
 "selecionadas."
 
 #, python-brace-format
 msgid "Scanning: {filename}"
-msgstr "Escaneando: {filename}"
+msgstr "A pesquisar: {filename}"
 
 msgid "Error processing the following images:"
 msgstr "Erro ao processar as seguintes imagens:"
 
 msgid "Unable to fully process the image associated with the following partitions:"
-msgstr "Não foi possível processar totalmente a imagem associada às seguintes partições:"
+msgstr ""
+"Não é possível processar totalmente a imagem associada com as seguintes "
+"partições:"
 
 msgid "Unable to fully process the following image:"
-msgstr "Incapaz de processar totalmente a seguinte imagem:"
+msgstr "Não é possível processar totalmente a seguinte imagem:"
 
 msgid "Cannot find partition's associated partclone image"
 msgstr "Não é possível encontrar a imagem partclone associada à partição"
 
 msgid "This can happen when loading images which Clonezilla was unable to completely backup."
-msgstr "Isso pode acontecer ao carregar imagens das quais o Clonezilla não conseguiu fazer backup completo."
+msgstr ""
+"Isto pode acontecer ao carregar imagens das quais o Clonezilla não conseguiu "
+"efetuar uma cópia de segurança completa."
 
 msgid "Note: This image format cannot distinguish between failed partclone backup and a user who chose not to backup a partition."
 msgstr ""
-"Nota: Este formato de imagem não pode distinguir entre backup de partclone "
-"com falha e um usuário que optou por não fazer backup de uma partição."
+"Nota: Este formato de imagem não pode distinguir entre cópia de segurança de "
+"partclone com falha e um utilizador que optou por não fazer cópia de "
+"segurança de uma partição."
 
 msgid "Any other filesystems within the image should be restorable as normal."
-msgstr "Quaisquer outros sistemas de arquivos na imagem devem ser restaurados normalmente."
+msgstr ""
+"Quaisquer outros sistemas de ficheiros na imagem devem ser restaurados "
+"normalmente."
 
 msgid "Needs decryption"
 msgstr "Precisa de descriptografia"
 
 msgid "Unknown filesystem"
-msgstr "Sistema de arquivos desconhecido"
+msgstr "Sistema de ficheiros desconhecido"
 
 #, python-brace-format
 msgid "The backup's extended partition information is empty. If the backup contains an extended partition this will not restore correctly. All data is still fully recoverable but manual intervention is required to fully restore data within the extended partition. Please consult {url} for information and assistance."
 msgstr ""
-"As informações de partição estendida do backup estão vazias. Se o backup "
-"contiver uma partição estendida, isso não será restaurado corretamente. "
-"Todos os dados ainda são totalmente recuperáveis, mas a intervenção manual é "
-"necessária para restaurar totalmente os dados dentro da partição estendida. "
-"Consulte {url} para obter informações e assistência."
+"As informações da partição alargada da cópia de segurança estão vazias. Se a "
+"cópia de segurança contiver uma partição alargada, esta não será restaurada "
+"corretamente. Todos os dados ainda são totalmente recuperáveis, mas é "
+"necessária uma intervenção manual para restaurar totalmente os dados dentro "
+"da partição alargada. Consulte {url} para obter informações e assistência."
 
 msgid "The backup's bootloader data is shorter than expected. If the backup contained certain bootloaders like GRUB, during a restore operation Rescuezilla will try and re-install the bootloader."
 msgstr ""
-"Os dados do carregador de inicialização do backup são menores do que o "
-"esperado. Se o backup contiver determinados gerenciadores de inicialização, "
-"como GRUB, durante uma operação de restauração, o Rescuezilla tentará "
-"reinstalar o gerenciador de inicialização."
+"Os dados do carregador de arranque da cópia de segurança são menores do que "
+"o esperado. Se a cópia de segurança contiver determinados gestores de "
+"arranque, como o GRUB, durante uma operação de restauro, o Rescuezilla "
+"tentará reinstalar o gestor de arranque."
 
 msgid "Step 4: Select Destination Folder"
 msgstr "Passo 4: Selecione a Pasta de Destino"
@@ -366,9 +415,12 @@ msgstr "Passo 4: Selecione a Pasta de Destino"
 msgid "Click <b>Browse</b> to select the folder on the destination drive where your new backup image will be saved.\n"
 "\n"
 "The folder a backup is saved in is usually a description of the computer, e.g. <b>office1</b> or <b>zack-laptop</b>."
-msgstr "Click em <b>Buscar</b> para selecionar uma pasta no drive de destino, onde sua nova imagem de backup será salva.\n"
+msgstr ""
+"Clique em <b>Explorar</b> para selecionar uma pasta na unidade de destino, "
+"onde a sua nova imagem de backup será guardada.\n"
 "\n"
-"A pasta onde um backup é salvo, normalmente é definida com o nome do computador, como por ex.: <b>trabalho1</b>, <b>vinny-laptop</b>."
+"A pasta onde um backup é guardado, normalmente é definido com o nome do "
+"computador, como por ex: <b>trabalho1</b>, <b>vinny-laptop</b>."
 
 #, python-brace-format
 msgid "You must select a folder inside {location}"
@@ -380,11 +432,11 @@ msgstr "Por favor selecione uma pasta diferente."
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr "A tabela abaixo lista as imagens de backup que já estão nesta pasta (se houver)."
 
-msgid "Browse..."
-msgstr "Buscar..."
+msgid "Browse…"
+msgstr "Buscar…"
 
 msgid "Filename"
-msgstr "Nome do arquivo"
+msgstr "Nome do ficheiro"
 
 msgid "Size"
 msgstr "Tamanho"
@@ -393,19 +445,20 @@ msgid "Last modified"
 msgstr "Última modificação"
 
 msgid "When you are happy with the destination folder, click <b>Next</b>."
-msgstr "Quando estiver bem com a pasta de destino, clique em <b>Próximo</b>."
+msgstr ""
+"Quando estiver satisfeito com a pasta de destino, clique em <b>Seguinte</b>."
 
 msgid "Step 5: Name Your Backup"
-msgstr "Passo 5: Nomeie Seu Backup"
+msgstr "Passo 5: Dê um nome à sua cópia de segurança"
 
 msgid "Provide a unique name for this backup image, such as the date.  Today's date is automatically entered for you below.\n"
 "\n"
 "You may only use letters, numbers, and dashes in your backup name."
 msgstr ""
-"Forneça um nome exclusivo para esta imagem de backup, como a data. A data de "
-"hoje é inserida automaticamente para você abaixo.\n"
+"Forneça um nome único para esta imagem de cópia de segurança, tal como a "
+"data.  A data de hoje é introduzida automaticamente para si abaixo.\n"
 "\n"
-"Você só pode usar letras, números e traços em seu nome de backup."
+"Só pode utilizar letras, números e traços no nome da cópia de segurança."
 
 msgid "Optional: Provide a short description."
 msgstr "Opcional: Forneça uma breve descrição."
@@ -444,17 +497,17 @@ msgstr "Melhor"
 
 msgid "When you are happy with the compression settings, click <b>Next</b>."
 msgstr ""
-"Quando estiver satisfeito com as configurações de compactação, clique em "
-"<b>Avançar</b>."
+"Quando estiver satisfeito com as definições de compressão, clique em "
+"<b>Seguinte</b>."
 
 msgid "Step 7: Confirm Backup Configuration"
-msgstr "Etapa 7: confirmar a configuração de backup"
+msgstr "Etapa 7: Confirmar a configuração de backup"
 
 msgid "Source drive"
-msgstr "Drive de origem"
+msgstr "Unidade de origem"
 
 msgid "Backing up the following partition(s)"
-msgstr "Fazendo backup da seguinte partição"
+msgstr "A efetuar a cópia de segurança da(s) seguinte(s) partição(ões)"
 
 #, python-brace-format
 msgid "The backup image will be written into folder {dest_dir} on {description}"
@@ -470,24 +523,25 @@ msgid "Do nothing"
 msgstr "Fazer nada"
 
 msgid "Shutdown"
-msgstr "Desligar"
+msgstr "Encerrar"
 
 msgid "Reboot"
 msgstr "Reiniciar"
 
 msgid "Rescue: Ignore filesystem inconsistencies and bad sectors"
 msgstr ""
-"Resgate: Ignore inconsistências do sistema de arquivos e setores defeituosos"
+"Recuperação: Ignore inconsistências do sistema de ficheiros e setores "
+"defeituosos"
 
 msgid "<b>Enabling \"Rescue\" may suppress important errors. Use with caution.</b>"
 msgstr ""
 "<b>Ativar \"Resgate\" pode suprimir erros importantes. Use com cautela.</b>"
 
 msgid "To start the backup, click <b>Next</b>."
-msgstr "Para iniciar o backup, click <b>Próximo</b>."
+msgstr "Para iniciar o backup, clique em <b>Seguinte</b>."
 
 msgid "Step 8: Creating Backup Image"
-msgstr "Passo 8: Criando Imagem de Backup"
+msgstr "Passo 8: A criar uma imagem de cópia de segurança"
 
 msgid "Backing up your system to the location you selected.  This may take an hour or more depending on the speed of your computer and the amount of data."
 msgstr "Fazendo backup do seu sistema para o local informado. Isso pode levar uma hora ou mais dependendo da velocidade do seu sistema e quantidade de dados salvos."
@@ -513,7 +567,7 @@ msgid "An operation is in progress. Do you wish to cancel?"
 msgstr "Uma operação está em andamento. Deseja cancelar?"
 
 msgid "Operation cancelled by user."
-msgstr "Backup cancelado pelo usuário."
+msgstr "Operação cancelada pelo utilizador."
 
 msgid "Rescue option is enabled."
 msgstr "A opção de resgate está habilitada."
@@ -522,7 +576,9 @@ msgid "Error creating backup: "
 msgstr "Erro ao criar backup: "
 
 msgid "Failed to write destination file. Please confirm it is valid to create the provided file path, and try again."
-msgstr "Falha ao escrever o arquivo de destino. Por favor confirme se o caminho para criar o arquivo é valido, e tente novamente."
+msgstr ""
+"Falha ao gravar o ficheiro de destino. Confirme se o caminho para criar o "
+"ficheiro é valido e tente novamente."
 
 #, python-brace-format
 msgid "Successful backup of swap partition {partition_name}"
@@ -546,37 +602,37 @@ msgid "Backup operation failed:"
 msgstr "Operação de backup falhou:"
 
 msgid "User requested operation to stop."
-msgstr "Operação solicitada pelo usuário para parar."
+msgstr "O utilizador solicitou a paragem da operação."
 
 #, python-brace-format
 msgid "Operation took {num_minutes} minutes."
 msgstr "Operação levou {num_minutes} minutos."
 
 msgid "To start a new session, click <b>Next</b>"
-msgstr "Para iniciar uma nova sessão, clique <b>Next</b>"
+msgstr "Para iniciar uma nova sessão, clique em <b>Seguinte</b>"
 
 msgid "Step 1: Select Image Location"
 msgstr "Passo 1: Selecione a localização da imagem"
 
 msgid "Where are the image files stored?"
-msgstr "Onde está o drive de origem?"
+msgstr "Onde está a unidade de origem?"
 
 msgid "Select the partition which contains the image files:"
-msgstr "Selecione o drive origem:"
+msgstr "Selecione a partição que contém os ficheiros de imagem:"
 
 msgid "Step 2: Select Backup Image"
 msgstr "Passo 2: Selecione a imagem de backup"
 
 msgid "Click <b>Browse</b> to select the folder containing image files."
 msgstr ""
-"Clique em <b>Procurar</b> para selecionar a pasta que contém os arquivos de "
+"Clique em <b>Procurar</b> para selecionar a pasta que contém os ficheiros de "
 "imagem."
 
 msgid "Select the image file to restore."
-msgstr "Selecione o arquivo de imagem para restaurar."
+msgstr "Selecione o ficheiro de imagem para restaurar."
 
 msgid "Step 3: Select Drive To Restore"
-msgstr "Passo 3: Selecione o Drive para Restaurar"
+msgstr "Passo 3: Selecione a unidade para restaurar"
 
 msgid "Select the destination drive to restore with the selected image."
 msgstr "Selecione a unidade de destino para restaurar com a imagem selecionada."
@@ -593,9 +649,6 @@ msgstr ""
 msgid "Selected image"
 msgstr "Imagem Selecionada"
 
-msgid "Destination device"
-msgstr "Dispositivo de destino"
-
 msgid "Destination partition"
 msgstr "Partição de destino"
 
@@ -606,7 +659,18 @@ msgid "You will be overwriting the partition table."
 msgstr "Você irá substituir a tabela de partição."
 
 msgid "The \"destination partition\" column has been updated using the information stored within the backup image.\n\n<b>If partitions have been resized, new partitions added, or additional operating systems installed <i>since the backup image was created</i>, then the destination drive's partition table will not match the backup image, and overwriting the destination drive's partition table will render these resized and additional partitions permanently inaccessible.</b> If you have not modified the partition table in such a way since creating this backup then overwriting the partition table is completely safe and will have no negative effects."
-msgstr "A Coluna \"partição de destino\" foi atualizada utilizando informações armazenadas com a imagem de backup.\n\n<b>Caso as partições tenham sido redimensionadas/adicionadas, ou até mesmo novos sistemas operacionais installados <i>desde que o backup foi criado</i>, então a tabela de partição do drive de destino, não irá casar com a imagem de backup, e substituirá a tabela de partição do drive destino, fazendo essas partições redimensionadas/adicionadas serem permanentemente incacessíveis.</b> Se você NÃO modificou a tabela de partição deste modo desde que criou o backup, então substituir as tabelas de partições será seguro e não haverá efeitos negativos."
+msgstr ""
+"A Coluna \"partição de destino\" foi atualizada utilizando informações "
+"armazenadas com a imagem de backup.\n"
+"\n"
+"<b>Caso as partições tenham sido redimensionadas/adicionadas, ou até mesmo "
+"novos sistemas operacionais installados <i>desde que o backup foi criado</"
+"i>, então a tabela de partição da unidade de destino, não irá casar com a "
+"imagem de backup, e substituirá a tabela de partição do unidade destino, "
+"fazendo essas partições redimensionadas/adicionadas serem permanentemente "
+"inacessíveis.</b> Se NÃO modificou a tabela de partição deste modo desde que "
+"criou o backup, então substituir as tabelas de partições será seguro e não "
+"haverá efeitos negativos."
 
 msgid "You will <b>not</b> be overwriting the partition table."
 msgstr "Você <b>não</b> substituirá a tabela de partição."
@@ -615,7 +679,14 @@ msgid "The source does not contain a partition table."
 msgstr "A origem não contém uma tabela de partição."
 
 msgid "The \"destination partition\" column has been updated with destination drive's existing partition table information.\n\n<b>The destination partition column can be modified as a dropdown menu. Incorrectly mapping the destination partitions may cause operating systems to no longer boot.</b> If you are unsure of the mapping, consider if it's more suitable to instead overwrite the partition table."
-msgstr "A Coluna \"partição de destino\" foi atualizada com as informações de tabelas da partição do drive de destino.\n\n<b>A coluna de partição de destino pode ser modificada como um menu drop-down. Mapeamente incorreto das partições de destino, pode fazer o sistema não relizar mais boot do SO.</b> Se você não tiver certeza do mapeamento, considere se seria mais adequado substituir a tabela de partição."
+msgstr ""
+"A Coluna \"partição de destino\" foi atualizada com as informações de "
+"tabelas da partição da unidade de destino.\n"
+"\n"
+"<b>A coluna de partição de destino pode ser modificada como um menu drop-"
+"down. Mapeamente incorreto das partições de destino, pode fazer o sistema "
+"não relizar mais boot do SO.</b> Se você não tiver certeza do mapeamento, "
+"considere se seria mais adequado substituir a tabela de partição."
 
 msgid "No destination partition selected. Use the destination partition drop-down menu to select the destination"
 msgstr ""
@@ -626,12 +697,12 @@ msgid "Not restoring this partition"
 msgstr "Não está restaurando esta partição"
 
 msgid "When you are ready to continue, click <b>Next</b>."
-msgstr "Quando estiver pronto para continuar, clique em <b>Avançar</b>."
+msgstr "Quando estiver pronto para continuar, clique em <b>Seguinte</b>."
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
 "Verificando e desmontando qualquer Volume Lógico do Gerenciador de Volume "
-"Lógico (LVM)..."
+"Lógico (LVM)…"
 
 #, python-brace-format
 msgid "The source partition table's final partition ({source}: {source_size} bytes) must refer to a region completely within the destination disk ({destination_size} bytes)."
@@ -684,7 +755,7 @@ msgid "Will <b>NOT</b> be overwriting partition table"
 msgstr "<b>NÃO</b> substituirá a tabela de partições"
 
 msgid "To start the restore, click <b>Next</b>."
-msgstr "Para iniciar a restauração, click <b>Próximo</b>."
+msgstr "Para iniciar o restauro, clique em <b>Seguinte</b>."
 
 msgid "Restoring From Backup"
 msgstr "Restaurando do Backup"
@@ -699,8 +770,8 @@ msgstr "Atualizando tabela de partição"
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr "Restaurando {description} para {destination_partition} ({destination_description})"
 
-msgid "Synchronizing disks..."
-msgstr "Sincronizando discos..."
+msgid "Synchronizing disks…"
+msgstr "Sincronizando discos…"
 
 #, python-brace-format
 msgid "Querying hard drive geometry of {device}"
@@ -711,10 +782,10 @@ msgid "Probing {device} with {app}"
 msgstr "Sondando {device} com {app}"
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 "Sistema de ficheiros em crescimento {partition} ({filesystem}). Isto pode "
-"demorar um pouco..."
+"demorar um pouco…"
 
 #, python-brace-format
 msgid "Resizing partition {partition} ({filesystem}) failed: {msg}"
@@ -723,13 +794,13 @@ msgstr "Falha ao redimensionar a partição {partition} ({filesystem}): {msg}"
 #, python-brace-format
 msgid "Successfully adjusted NTFS filesystem geometry of {ntfs_device} using values from {geometry_source}"
 msgstr ""
-"Geometria do sistema de arquivos NTFS ajustada com sucesso de {ntfs_device} "
+"Geometria do sistema de ficheiros NTFS ajustada com sucesso de {ntfs_device} "
 "usando valores de {geometry_source}"
 
 #, python-brace-format
 msgid "Failed to adjust NTFS filesystem geometry of {ntfs_device}"
 msgstr ""
-"Falha ao ajustar a geometria do sistema de arquivos NTFS de {ntfs_device}"
+"Falha ao ajustar a geometria do sistema de ficheiros NTFS de {ntfs_device}"
 
 msgid "Removing udev MAC address records (if any)"
 msgstr "Removendo registros de endereço MAC do udev (se houver)"
@@ -755,8 +826,8 @@ msgstr "Atualizando initramfs (se houver)"
 msgid "Successfully updated initramfs"
 msgstr "Initramfs atualizado com sucesso"
 
-msgid "Updating EFI NVRAM..."
-msgstr "Atualizando EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
+msgstr "Atualizando EFI NVRAM…"
 
 msgid "Successfully updated EFI NVRAM"
 msgstr "EFI NVRAM atualizado com sucesso"
@@ -765,7 +836,9 @@ msgid "Error restoring image: "
 msgstr "Falha ao restauarar imagem: "
 
 msgid "Could not restore sfdisk partition table as file has zero length: "
-msgstr "Não posso restaurar a partição de tabela sfdisk como arquivo de tamanho zero: "
+msgstr ""
+"Não foi possível restaurar a tabela de partições sfdisk como ficheiro de "
+"tamanho zero: "
 
 msgid "Successfully restored partition table."
 msgstr "Tabela de partição restaurada com sucesso."
@@ -814,13 +887,13 @@ msgid "Image Explorer (beta)"
 msgstr "Explorador de imagens (beta)"
 
 msgid "Select the image file to explore"
-msgstr "Selecione o arquivo de imagem para explorar"
+msgstr "Selecione o ficheiro de imagem a explorar"
 
 msgid "Step 3: Select Partition to Explore"
 msgstr "Etapa 3: selecione a partição para explorar"
 
 msgid "Select the partition to access files from."
-msgstr "Selecione a partição para acessar os arquivos."
+msgstr "Selecione a partição a partir da qual pretende aceder aos ficheiros."
 
 msgid "Click <b>Mount</b> to mount the backup image (as read-only)."
 msgstr ""
@@ -830,28 +903,28 @@ msgstr ""
 msgid "Mount"
 msgstr "Montar"
 
-msgid "Mounting as read-only..."
-msgstr "Montando como somente leitura..."
+msgid "Mounting as read-only…"
+msgstr "Montando como somente leitura…"
 
 msgid "Unmount"
 msgstr "Desmontar"
 
 msgid "Once the partition has been mounted, click <b>Open in file manager</b> to access your files."
 msgstr ""
-"Assim que a partição estiver montada, clique em <b>Abrir no gerenciador de "
-"arquivos</b> para acessar seus arquivos."
+"Assim que a partição estiver montada, clique em <b>Abrir no gestor de "
+"ficheiros</b> para aceder aos seus ficheiros."
 
 msgid "Open in file manager"
-msgstr "Abrir no gerenciador de arquivos"
+msgstr "Abrir no gestor de ficheiros"
 
 msgid "Verify"
 msgstr "Verificar"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr "Selecione uma ou mais imagens para verificar."
 
 msgid "To begin verification, click <b>Next</b>."
-msgstr "Para iniciar a verificação, clique em <b>Avançar</b>."
+msgstr "Para iniciar a verificação, clique em <b>Seguinte</b>."
 
 msgid "Verifying Image"
 msgstr "Verificando Imagem"
@@ -888,14 +961,14 @@ msgid "No partition table found."
 msgstr "Nenhuma tabela de partição encontrada."
 
 msgid "Sfdisk partition table file is empty or missing."
-msgstr "O arquivo da tabela de partições Sfdisk está vazio ou ausente."
+msgstr "O ficheiro da tabela de partições Sfdisk está vazio ou em falta."
 
 msgid "Sfdisk partition table file is present."
-msgstr "O arquivo da tabela de partições Sfdisk está presente."
+msgstr "O ficheiro da tabela de partições Sfdisk está presente."
 
 msgid "Unable to verify."
 msgstr "Não foi possível verificar."
 
 #, python-brace-format
 msgid "{partition}: filesystem image successfully verified."
-msgstr "{partition}: imagem do sistema de arquivos verificada com sucesso."
+msgstr "{partition}: imagem do sistema de ficheiros verificada com sucesso."

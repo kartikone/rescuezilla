@@ -4,13 +4,14 @@
 # ttt113326 <tonio_k@mail.ru>, 2021.
 # Ali <am30304030@gmail.com>, 2023.
 # Ali <alisojasi14@gmail.com>, 2025.
+# Barbod Emadoddin <barbod9292@gmail.com>, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-03-02 00:00+0000\n"
-"PO-Revision-Date: 2025-01-22 17:36+0000\n"
-"Last-Translator: Ali <alisojasi14@gmail.com>\n"
+"PO-Revision-Date: 2025-05-02 10:30+0000\n"
+"Last-Translator: Barbod Emadoddin <barbod9292@gmail.com>\n"
 "Language-Team: Persian <https://hosted.weblate.org/projects/rescuezilla/"
 "rescuezilla/fa/>\n"
 "Language: fa\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Weblate 5.10-dev\n"
+"X-Generator: Weblate 5.12-dev\n"
 
 msgid "Welcome"
 msgstr "خوش آمدید"
@@ -38,37 +39,38 @@ msgid "Restore"
 msgstr "بازیابی"
 
 msgid "Verify Image"
-msgstr "تایید تصویر"
+msgstr "تایید پشتیبان"
 
 msgid "Need help? Start by checking the Rescuezilla frequently asked questions, then proceed to the Rescuezilla forum."
 msgstr ""
-"کمک خواستن؟ با بررسی سوالات متداول Rescuezilla شروع کنید، سپس به انجمن "
+"کمک میخواهید؟ با بررسی سوالات متداول Rescuezilla شروع کنید، سپس به انجمن "
 "Rescuezilla بروید."
 
+#, fuzzy
 msgid "Consider contributing $1/month on the crowdfunding website Patreon so Rescuezilla can continue to be developed."
 msgstr ""
 "در نظر بگیرید که ماهانه 1 دلار در وب سایت سرمایه گذاری جمعی Patreon مشارکت "
 "کنید تا Rescuezilla بتواند به توسعه خود ادامه دهد."
 
 msgid "Back"
-msgstr "عقب"
+msgstr "قبلی"
 
 msgid "Next >"
-msgstr "بعد"
+msgstr "بعدی >"
 
-msgid "Please wait..."
-msgstr "لطفا صبر کنید..."
+msgid "Please wait…"
+msgstr "لطفا صبر کنید…"
 
-msgid "Identifying disk drives..."
-msgstr "شناسایی درایوهای دیسک..."
+msgid "Identifying disk drives…"
+msgstr "شناسایی درایوهای دیسک…"
 
 #, python-brace-format
 msgid "Unmounting: {path}"
-msgstr "در حال جداسازی:{path}"
+msgstr "در حال جداسازی (آنمونت):{path}"
 
 #, python-brace-format
 msgid "Unable to unmount {path}"
-msgstr "قادر به جداسازی {path} نبود"
+msgstr "قادر به جداسازی (آنمونت) {path} نبود"
 
 #, python-brace-format
 msgid "Running: {app}"
@@ -76,7 +78,7 @@ msgstr "در حال اجرا: {app}"
 
 #, python-brace-format
 msgid "Running {app} on {device}"
-msgstr "اجرای {app} در {device}"
+msgstr "در حال اجرای {app} بر روی {device}"
 
 msgid "Failed to run command: "
 msgstr "فرمان اجرا نشد "
@@ -236,6 +238,39 @@ msgstr ""
 msgid "Version"
 msgstr ""
 
+msgid "default (Negotiate highest SMB2+ supported by client and server)"
+msgstr ""
+
+msgid "1.0 (The classic CIFS/SMBv1 protocol)"
+msgstr ""
+
+msgid "2.0 (Introduced in Vista SP1, Windows Server 2008)"
+msgstr ""
+
+msgid "2.1 (Introduced in Windows 7, Windows Server 2008R2)"
+msgstr ""
+
+msgid "3 (The SMBv3.0 protocol version and above)"
+msgstr ""
+
+msgid "3.0 (Introduced in Windows 8, Windows Server 2012)"
+msgstr ""
+
+msgid "3.0.2 (Introduced in Windows 8.1, Windows Server 2012R2)"
+msgstr ""
+
+msgid "3.1.1 (Introduced in Windows 10, Windows Server 2016)"
+msgstr ""
+
+msgid "Unspecified (Tries NFS v4.2 first, then negotiates with server down until finds a supported version)"
+msgstr ""
+
+msgid "NFSv3"
+msgstr ""
+
+msgid "NFSv4"
+msgstr ""
+
 msgid "Remote path"
 msgstr ""
 
@@ -245,7 +280,7 @@ msgstr ""
 msgid "Identity File"
 msgstr ""
 
-msgid "Optional"
+msgid "Port"
 msgstr ""
 
 msgid "Select network-shared storage location:"
@@ -257,7 +292,7 @@ msgstr ""
 msgid "Partition"
 msgstr ""
 
-msgid "Mounting..."
+msgid "Mounting…"
 msgstr ""
 
 msgid "Close this popup to cancel the mount operation."
@@ -269,7 +304,7 @@ msgstr ""
 msgid "Must provide either password or SSH identity file."
 msgstr ""
 
-msgid "Scanning folder for backup images..."
+msgid "Scanning folder for backup images…"
 msgstr ""
 
 #, python-brace-format
@@ -335,7 +370,7 @@ msgstr ""
 msgid "The table below lists the backup images that are already in this folder (if any)."
 msgstr ""
 
-msgid "Browse..."
+msgid "Browse…"
 msgstr ""
 
 msgid "Filename"
@@ -533,9 +568,6 @@ msgstr ""
 msgid "Selected image"
 msgstr ""
 
-msgid "Destination device"
-msgstr ""
-
 msgid "Destination partition"
 msgstr ""
 
@@ -566,7 +598,7 @@ msgstr ""
 msgid "When you are ready to continue, click <b>Next</b>."
 msgstr ""
 
-msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes..."
+msgid "Scanning and unmounting any Logical Volume Manager (LVM) Logical Volumes…"
 msgstr ""
 
 #, python-brace-format
@@ -622,7 +654,7 @@ msgstr ""
 msgid "Restoring {description} to {destination_partition} ({destination_description})"
 msgstr ""
 
-msgid "Synchronizing disks..."
+msgid "Synchronizing disks…"
 msgstr ""
 
 #, python-brace-format
@@ -634,7 +666,7 @@ msgid "Probing {device} with {app}"
 msgstr ""
 
 #, python-brace-format
-msgid "Growing filesystem {partition} ({filesystem}). This may take a while..."
+msgid "Growing filesystem {partition} ({filesystem}). This may take a while…"
 msgstr ""
 
 #, python-brace-format
@@ -673,7 +705,7 @@ msgstr ""
 msgid "Successfully updated initramfs"
 msgstr ""
 
-msgid "Updating EFI NVRAM..."
+msgid "Updating EFI NVRAM…"
 msgstr ""
 
 msgid "Successfully updated EFI NVRAM"
@@ -740,7 +772,7 @@ msgstr ""
 msgid "Mount"
 msgstr ""
 
-msgid "Mounting as read-only..."
+msgid "Mounting as read-only…"
 msgstr ""
 
 msgid "Unmount"
@@ -755,7 +787,7 @@ msgstr ""
 msgid "Verify"
 msgstr "تصدیق کردن"
 
-msgid "Select one or more image(s) to verify."
+msgid "Select one or more images to verify."
 msgstr ""
 
 msgid "To begin verification, click <b>Next</b>."
