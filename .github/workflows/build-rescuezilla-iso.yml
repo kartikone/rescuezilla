@@ -32,10 +32,8 @@ jobs:
           ./generate-release-notes.sh ${{github.ref_name}} "oracular" > /tmp/release-notes.md
           echo "RELEASE_DATE=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
       - run: |
-          sudo su -
-          apt update
-          apt dist-upgrade
-          exit
+          sudo apt update
+          sudo apt dist-upgrade
 
       - name: Build Docker image
         run: make docker-build
