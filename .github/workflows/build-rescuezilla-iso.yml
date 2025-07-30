@@ -22,7 +22,7 @@ jobs:
       # Extract human-readable version string from the most recent CHANGELOG entry
       - run: echo "RESCUEZILLA_RELEASE_NAME=\"$(git grep -h -E -o '[a-zA-Z].*)' CHANGELOG | head -1)\"" >> $GITHUB_ENV
       # Get deb package version using same command from its build scripts
-      - run: echo "DEB_VERSION=$(git describe --tags  --match='[0-9].[0-9]*' --abbrev=0)" >> $GITHUB_ENV
+      - run: echo "DEB_VERSION=2.6.1" >> $GITHUB_ENV
 
       - name: Generate release notes (and set default release in notes)
         if: github.event_name == 'push' && contains(github.ref, 'refs/tags/')
