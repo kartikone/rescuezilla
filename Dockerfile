@@ -22,6 +22,9 @@ COPY src/livecd/chroot/etc/apt/sources.list /etc/apt/sources.list
 # Copy the apt-preferences file to ensure backports and proposed repositories are never automatically selected.
 COPY "src/livecd/chroot/etc/apt/preferences.d/89_CODENAME_SUBSTITUTE-backports_default" "/etc/apt/preferences.d/89_$CODENAME-backports_default"
 COPY "src/livecd/chroot/etc/apt/preferences.d/90_CODENAME_SUBSTITUTE-proposed_default" "/etc/apt/preferences.d/90_$CODENAME-proposed_default"
+RUN sed -i -e 's/http:\/\/ports.ubuntu/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
+RUN sed -i -e 's/http:\/\/archive.ubuntu/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
+RUN sed -i -e 's/http:\/\/security.ubuntu/mirror:\/\/mirrors/' -e 's/\/ubuntu\//\/mirrors.txt/' /etc/apt/sources.list
 RUN sed --in-place "s*CODENAME_SUBSTITUTE*$CODENAME*g" "/etc/apt/sources.list"
 RUN sed --in-place "s*CODENAME_SUBSTITUTE*$CODENAME*g" /etc/apt/preferences.d/89_${CODENAME}-backports_default
 RUN sed --in-place "s*CODENAME_SUBSTITUTE*$CODENAME*g" /etc/apt/preferences.d/90_${CODENAME}-proposed_default
