@@ -12,6 +12,12 @@ jobs:
     permissions:
       contents: write
     steps:
+      - run: |
+          sudo su -
+          apt update
+          apt dist-upgrade
+          exit
+          
       - name: Checkout
         uses: actions/checkout@v2
         with:
