@@ -12,12 +12,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - run: |
-          sudo su -
-          apt update
-          apt dist-upgrade
-          exit
-          
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -37,6 +31,11 @@ jobs:
           chmod +x generate-release-notes.sh
           ./generate-release-notes.sh ${{github.ref_name}} "oracular" > /tmp/release-notes.md
           echo "RELEASE_DATE=$(date '+%Y-%m-%d')" >> $GITHUB_ENV
+      - run: |
+          sudo su -
+          apt update
+          apt dist-upgrade
+          exit
 
       - name: Build Docker image
         run: make docker-build
